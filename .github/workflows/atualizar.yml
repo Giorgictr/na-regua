@@ -46,14 +46,16 @@ jobs:
             printf '%-45s ' "$u"; curl -s -o /dev/null -m 25 -w '%{http_code} %{time_total}s\n' "$u" || echo "sem resposta"
           done
 
-      - name: Coletar fontes (cada uma isolada, até 40 min)
+      - name: Coletar fontes (cada uma isolada, com limite de tempo)
         if: github.event_name != 'push'
         env:
           PYTHONUNBUFFERED: "1"
         run: |
           for f in $(python -c "from etl.rodar import FONTES; print(' '.join(FONTES))"); do
             echo "::group::$f"
-            timeout 40m python -m etl.rodar "$f" || echo "[falha] $f (erro ou tempo esgotado; ficam os dados da última coleta boa)"
+            # o TabNet (DATASUS) responde devagar a servidores fora do Brasil: mais tempo para essas duas
+            case "$f" in datasus|saude) lim=100m ;; *) lim=40m ;; esac
+            timeout $lim python -m etl.rodar "$f" || echo "[falha] $f (erro ou tempo esgotado; ficam os dados da última coleta boa)"
             echo "::endgroup::"
           done
           python -m etl.rodar --so-site
