@@ -1158,6 +1158,7 @@ function pintarMapa(caixa, { cor, rotulo, dica, selecionado, fora, aoClicar }) {
   for (const t of m.svg.querySelectorAll(".rotulos .sigla")) { const k = cor(t.textContent); t.style.fill = k ? textoSobre(k) : "var(--grafite)"; }
 }
 
+let modoMapaPreferido = "posse";
 // mapa do Brasil + linha do tempo + ordem dos estados
 function painelEstados(ind, uf, lado) {
   const c = cat(ind), ufsComDado = ORDEM_UF.filter((u) => serie(ind, u).length);
@@ -1175,7 +1176,37 @@ function painelEstados(ind, uf, lado) {
   }
   difsTodas.sort((a, b) => a - b); valsTodos.sort((a, b) => a - b);
   const ESC90 = difsTodas[Math.floor(difsTodas.length * 0.9)] || 1;
+  // modo "desde a posse": variação de cada estado desde o ano anterior à posse do governador da época,
+  // no mesmo trimestre/mês; a cor segue a natureza do indicador (cair é bom na mortalidade, ruim no PIB)
+  const direcional = c.melhor && c.melhor !== "neutro" && !SEM_VEREDITO[ind] && !c.leitura;
+  const porUF = new Map(["BR", ...ufsComDado].map((u) => [u, new Map(serie(ind, u).map((p) => [p[0], p[3]]))]));
+  const baseDaPosse = (u, per) => {
+    const p = ref.get(per); if (!p) return null;
+    const m = quemGoverna(u, meio(p)); if (!m) return null;
+    let g = gestaoDoMandato(m);
+    if (g?.absorvida) g = GESTOES.find((t) => t.afastamentos?.includes(g)) ?? g;
+    if (!g) return null;
+    const anoBase = (anosDaGestao(g)[0] ?? +g.inicio.slice(0, 4)) - 1;
+    if (anoBase >= +per.slice(0, 4)) return null;
+    for (const a of [anoBase, anoBase - 1]) {
+      const rot = per.replace(/^\d{4}/, String(a)), v = porUF.get(u)?.get(rot);
+      if (v != null) return { rot, v, g };
+    }
+    return null;
+  };
+  const varPosse = (u, per) => { const b = baseDaPosse(u, per), v = porUF.get(u)?.get(per);
+    if (!b || v == null) return null; const d = variacao(ind, b.v, v); return d == null ? null : { ...b, d, sg: sentido(ind, d) }; };
+  let ESC_POSSE = 1;
+  if (direcional) {
+    const xs = [];
+    for (const per of pers) for (const u of ufsComDado) { const r = varPosse(u, per); if (r?.sg != null) xs.push(Math.abs(r.sg)); }
+    xs.sort((a, b) => a - b); ESC_POSSE = xs[Math.floor(xs.length * 0.9)] || 1;
+  }
+  const modos = [direcional && ["posse", "Desde a posse"], julga && ["brasil", "Comparado ao Brasil"], ["valor", "Valor"]].filter(Boolean);
+  let modo = modos.some(([k]) => k === modoMapaPreferido) ? modoMapaPreferido : modos[0][0];
   lado.innerHTML = `<h4>Estados · <span data-p="per"></span></h4>
+    ${modos.length > 1 ? `<div class="modo-mapa" role="radiogroup" aria-label="O que a cor mostra" data-p="modos">${modos.map(([k, t]) =>
+      `<button type="button" role="radio" data-modo="${k}" aria-checked="${k === modo}">${t}</button>`).join("")}</div>` : ""}
     <p class="fonte-bloco sub-mapa" data-p="sub"></p>
     <div class="blocos" data-p="blocos"></div>
     <div class="legenda" data-p="leg"></div>
@@ -1193,7 +1224,13 @@ function painelEstados(ind, uf, lado) {
     const tema = escuro() ? "escuro" : "claro";
     const comVal = ufsComDado.filter((u) => val[u] != null);
     let cor, legenda;
-    if (julga && val.BR != null) {
+    if (modo === "posse") {
+      cor = (u) => { const r = varPosse(u, per); if (!r || r.sg == null) return SEQ[tema][0];
+        if (Math.abs(r.d) < limiar(ind)) return DIV[tema][4];
+        const k = Math.max(-4, Math.min(4, Math.round(r.sg / ESC_POSSE * 4) || Math.sign(r.sg))); return DIV[tema][k + 4]; };
+      legenda = `<span>piorou</span><span class="rampa">${DIV[tema].map((x) => `<span style="background:${x}"></span>`).join("")}</span><span>melhorou</span>
+        <span class="br-ref">${c.melhor === "menor" ? "aqui, cair é bom" : "aqui, subir é bom"} · tom mais forte: ${esc(fmtVarAbs(ind, ESC_POSSE))} ou mais · cinza claro: sem base</span>`;
+    } else if (modo === "brasil" && val.BR != null) {
       const sg = (u) => sentido(ind, variacao(ind, val.BR, val[u]));
       cor = (u) => { const k = Math.max(-4, Math.min(4, Math.round(sg(u) / ESC90 * 4))); return DIV[tema][k + 4]; };
       legenda = `<span>pior que o Brasil</span><span class="rampa">${DIV[tema].map((x) => `<span style="background:${x}"></span>`).join("")}</span><span>melhor</span><span class="br-ref">tom mais forte: ${esc(fmtVar(ind, ESC90).replace("+", ""))} ou mais</span>
@@ -1220,8 +1257,11 @@ function painelEstados(ind, uf, lado) {
     const foraDe = (u) => val[u] != null && ((c.limite != null && val[u] > c.limite) || (c.meta != null && val[u] < c.meta));
     const htmlDica = (u) => {
       const gov = pRef ? quemGoverna(u, meio(pRef)) : null;
-      return `<span class="s">${esc(D.ufs[u])} · ${esc(nomePeriodo(per))}</span><br><b>${esc(fmtU(ind, val[u]))}</b>${foraDe(u) ? ` <span class="s">⚑ ${c.limite != null ? "acima do limite" : "abaixo do mínimo"}</span>` : ""}
-        ${val.BR != null && !extensivo(ind) ? `<br><span class="s">${esc(nomeUF(ind, "BR"))}: ${esc(fmtU(ind, val.BR))}${julga && val[u] != null ? ` · diferença: ${esc(fmtVar(ind, variacao(ind, val.BR, val[u])))}` : ""}</span>` : ""}${gov ? `<br><span class="s">${esc(gov.nome)} (${esc(gov.partido)})</span>` : ""}`;
+      const vp = modo === "posse" ? varPosse(u, per) : null;
+      const linhaPosse = vp ? `<br><span class="s">desde a posse (${esc(nomePeriodo(vp.rot))} → ${esc(nomePeriodo(per))}): ${esc(fmtVar(ind, vp.d))} · ${Math.abs(vp.d) < limiar(ind) ? "estável" : vp.sg > 0 ? "melhorou" : "piorou"}</span>`
+        : modo === "posse" ? `<br><span class="s">sem dado do ano anterior à posse</span>` : "";
+      return `<span class="s">${esc(D.ufs[u])} · ${esc(nomePeriodo(per))}</span><br><b>${esc(fmtU(ind, val[u]))}</b>${linhaPosse}${foraDe(u) ? ` <span class="s">⚑ ${c.limite != null ? "acima do limite" : "abaixo do mínimo"}</span>` : ""}
+        ${val.BR != null && !extensivo(ind) ? `<br><span class="s">${esc(nomeUF(ind, "BR"))}: ${esc(fmtU(ind, val.BR))}${modo === "brasil" && julga && val[u] != null ? ` · diferença: ${esc(fmtVar(ind, variacao(ind, val.BR, val[u])))}` : ""}</span>` : ""}${gov ? `<br><span class="s">${esc(gov.nome)} (${esc(gov.partido)})</span>` : ""}`;
     };
     const bl = q("blocos");
     if (GEO) {
@@ -1255,7 +1295,9 @@ function painelEstados(ind, uf, lado) {
       bl.append(b);
     }
     q("leg").innerHTML = legenda;
-    q("sub").textContent = julga && val.BR != null ? "Cor: diferença entre o estado e o Brasil neste período."
+    q("sub").textContent = modo === "posse" ? "Cor: quanto o número melhorou ou piorou desde o ano anterior à posse do governador da época (mesmo trimestre ou mês)."
+      : modo === "valor" && direcional ? "Cor: valor do estado (mais escuro, maior)."
+      : modo === "brasil" && val.BR != null ? "Cor: diferença entre o estado e o Brasil neste período."
       : (c.limite != null || c.meta != null) ? "Cor: valor do estado (mais escuro, maior)."
       : (valsTodos[0] < 0 && valsTodos.at(-1) > 0) ? `Cor: valor do estado (azul ${c.melhor === "menor" ? "negativo" : "positivo"}, vermelho ${c.melhor === "menor" ? "positivo" : "negativo"}).` : "Cor: valor do estado (mais escuro, maior).";
     const merito = !(extensivo(ind) || c.melhor === "neutro");
@@ -1276,6 +1318,12 @@ function painelEstados(ind, uf, lado) {
     q("mais").hidden = !corte;
   };
   q("tempo").addEventListener("input", desenhar);
+  q("modos")?.addEventListener("click", (ev) => {
+    const b = ev.target.closest("[data-modo]"); if (!b) return;
+    modo = modoMapaPreferido = b.dataset.modo;
+    q("modos").querySelectorAll("[data-modo]").forEach((x) => x.setAttribute("aria-checked", String(x === b)));
+    desenhar();
+  });
   q("mais").addEventListener("click", () => { todosVisiveis = true; desenhar(); });
   let timer = null;
   q("tocar").addEventListener("click", () => {
