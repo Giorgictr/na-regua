@@ -72,6 +72,11 @@ jobs:
             echo "nada mudou"
           else
             git commit -m "dados: coleta de $(date -u +%F)"
+            # alguém pode ter enviado mudanças no site durante a coleta: incorpora antes de enviar
+            git pull --rebase -X theirs origin main || git pull --rebase origin main
+            python -m etl.rodar --so-site
+            git add site/dados.json site/index.html site/origem
+            git diff --cached --quiet || git commit -m "dados: regera o site após incorporar mudanças"
             git push
           fi
 
