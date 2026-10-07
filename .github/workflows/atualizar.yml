@@ -78,7 +78,7 @@ jobs:
       - name: Montar site
         run: |
           mkdir -p _site
-          cp -r site/index.html site/app.js site/estilo.css site/dados.json site/origem site/favicon.ico _site/
+          cp -r site/index.html site/app.js site/estilo.css site/dados.json site/origem site/favicon.ico site/brasil.json _site/
           cp -r dados _site/dados
 
       - uses: actions/upload-pages-artifact@v3

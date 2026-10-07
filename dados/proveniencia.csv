@@ -12725,3 +12725,6 @@ baixado_em,fonte,url,post,sha256,bytes,conteudo_novo,post_sha256
 2026-10-07T17:32:46+00:00,siconfi,https://apisidra.ibge.gov.br/values/t/1737/n1/all/v/2266/p/all,,15d09db841a0dfe3d4b94975acf043d56cf085f49b540c6335852764ce7f14bd,170098,não,
 2026-10-07T17:32:47+00:00,ibge,https://tabnet.datasus.gov.br/cgi/deftohtm.exe?ibge/cnv/projpop2024uf.def,,1d3e91e735f2634a3875b626c6234731ae45c6da8f91d9b11319553abb247884,19189,não,
 2026-10-07T17:37:30+00:00,ibge,https://tabnet.datasus.gov.br/cgi/tabcgi.exe?ibge/cnv/projpop2024uf.def,sim,b853f317d0800c6ede3fe6635686f394714b2fd2cd475b5ad8284332e5a51623,6810,não,15f3be06ba6fb679b36048d55a138a51123fdfe49af2179de28ca0d65c8a5b9d
+2026-10-07T15:39:33+00:00,ibge,https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&qualidade=minima&intrarregiao=UF,,0e63107eeb3977da61892e781b8b2510de55309a7560c21125cedf1a7458963d,28157,sim,
+2026-10-07T15:39:40+00:00,ibge,https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&qualidade=minima&intrarregiao=UF,,07c671aa87aa1ab296c446de6294df9827112782537b996c0a160284907e7c0f,98502,sim,
+2026-10-07T15:39:50+00:00,ibge,https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?formato=application/vnd.geo+json&qualidade=minima&intrarregiao=UF,,07c671aa87aa1ab296c446de6294df9827112782537b996c0a160284907e7c0f,98502,não,

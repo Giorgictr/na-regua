@@ -1076,7 +1076,89 @@ function governosAlinhados(ind, uf, gSel, alvo) {
   }
 }
 
-// mapa em blocos + linha do tempo + ordem dos estados
+// ---------------- mapa do Brasil em relevo ----------------
+// Cada estado é um "ladrilho" com face (cor do dado) e lateral (a mesma cor, mais escura), num
+// plano inclinado em perspectiva. Ao passar o mouse ou focar, o estado sobe e ganha sombra.
+function escurecer(hex, f = 0.62) {
+  const n = parseInt(hex.slice(1), 16);
+  const c = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((x) => Math.round(x * f));
+  return "#" + c.map((x) => x.toString(16).padStart(2, "0")).join("");
+}
+const RELEVO = 7;      // espessura do ladrilho, em unidades do SVG
+const ELEVACAO = 18;   // quanto o estado sobe ao passar o mouse
+function montarMapa(caixa, aoClicar) {
+  if (caixa._mapa) return caixa._mapa;
+  const W = GEO.largura, H = GEO.altura;
+  const svg = s("svg", { viewBox: `-10 -10 ${W + 20} ${H + 30}`, class: "mapa-br", role: "group", "aria-label": "Mapa do Brasil por estado" });
+  const defs = s("defs");
+  defs.innerHTML = `<filter id="sombra-uf" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="9" flood-color="#000" flood-opacity=".35"/></filter>`;
+  svg.append(defs);
+  const base = s("g", { class: "base" }), faces = s("g", { class: "faces" }), rotulos = s("g", { class: "rotulos", "aria-hidden": "true" }), topo = s("g", { class: "realce", "aria-hidden": "true" });
+  const est = {};
+  for (const [u, g] of Object.entries(GEO.ufs)) {
+    base.append(s("path", { d: g.d, class: "lado", transform: `translate(0 ${RELEVO})`, "data-uf": u }));
+    const grupo = s("g", { class: "uf", tabindex: "0", role: "button", "data-uf": u });
+    const face = s("path", { d: g.d, class: "face" });
+    grupo.append(face);
+    faces.append(grupo);
+    if (g.area >= 2500) rotulos.append(s("text", { x: g.c[0], y: g.c[1] + 6, "text-anchor": "middle", class: "sigla", text: u }));
+    est[u] = { grupo, face, lado: base.querySelector(`[data-uf="${u}"]`) };
+  }
+  svg.append(base, faces, rotulos, topo);
+  const caixa3d = document.createElement("div");
+  caixa3d.className = "mapa3d";
+  caixa3d.append(svg);
+  caixa.replaceChildren(caixa3d);
+  // realce: uma cópia do estado, elevada, desenhada por cima de todos
+  let atual = null;
+  const elevar = (u) => {
+    if (atual === u) return;
+    topo.replaceChildren();
+    atual = u;
+    if (!u) return;
+    const g = GEO.ufs[u], cor = est[u].cor || (escuro() ? "#262b28" : "#e3e6e1");
+    const cop = s("g", { class: "elevado" });
+    const lateral = escurecer(cor);
+    for (let dy = ELEVACAO + RELEVO; dy > 0; dy -= 3) cop.append(s("path", { d: g.d, class: "lado-alto", style: `fill:${lateral}`, transform: `translate(0 ${dy})` }));
+    cop.append(s("path", { d: g.d, class: "face-alta", style: `fill:${cor}` }));
+    if (g.area >= 900) cop.append(s("text", { x: g.c[0], y: g.c[1] + 6, "text-anchor": "middle", class: "sigla", style: `fill:${textoSobre(cor)}`, text: u }));
+    topo.append(cop);
+    cop.style.setProperty("--subida", `-${ELEVACAO}px`);
+    requestAnimationFrame(() => requestAnimationFrame(() => cop.classList.add("subiu")));
+  };
+  for (const [u, e] of Object.entries(est)) {
+    e.grupo.addEventListener("pointerenter", () => elevar(u));
+    e.grupo.addEventListener("pointerleave", () => { elevar(null); esconderDica(); });
+    e.grupo.addEventListener("focus", () => { elevar(u); const r = e.grupo.getBoundingClientRect(); e.grupo._dica?.({ clientX: r.right, clientY: r.top + r.height / 2 }); });
+    e.grupo.addEventListener("blur", () => { elevar(null); esconderDica(); });
+    e.grupo.addEventListener("click", () => aoClicar(u));
+    e.grupo.addEventListener("keydown", (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); aoClicar(u); } });
+  }
+  caixa._mapa = { svg, est, elevar, get atual() { return atual; } };
+  return caixa._mapa;
+}
+function pintarMapa(caixa, { cor, rotulo, dica, selecionado, fora, aoClicar }) {
+  const m = montarMapa(caixa, aoClicar);
+  for (const [u, e] of Object.entries(m.est)) {
+    const k = cor(u);
+    e.cor = k || null;
+    e.face.style.fill = k || ""; e.lado.style.fill = k ? escurecer(k) : "";
+    e.grupo.classList.toggle("vazio", !k);
+    e.grupo.classList.toggle("sel", u === selecionado);
+    e.grupo.classList.toggle("fora", !!fora(u));
+    e.grupo.setAttribute("aria-label", rotulo(u));
+    e.grupo.setAttribute("aria-pressed", String(u === selecionado));
+    e.grupo._dica = (ev) => dica(u, ev);
+    e.grupo.onpointermove = e.grupo._dica;
+  }
+  // estado elevado durante a animação do tempo: refaz a cópia com a cor nova
+  const elevadoAgora = m.atual;
+  if (elevadoAgora) { m.elevar(null); m.elevar(elevadoAgora); }
+  // texto das siglas acompanha a cor de cada estado
+  for (const t of m.svg.querySelectorAll(".rotulos .sigla")) { const k = cor(t.textContent); t.style.fill = k ? textoSobre(k) : "var(--grafite)"; }
+}
+
+// mapa do Brasil + linha do tempo + ordem dos estados
 function painelEstados(ind, uf, lado) {
   const c = cat(ind), ufsComDado = ORDEM_UF.filter((u) => serie(ind, u).length);
   if (ufsComDado.length < 2) { lado.innerHTML = `<h4>Só existe o número nacional</h4><p class="fonte-bloco">A fonte publica este indicador apenas para o Brasil.</p>`; return; }
@@ -1135,8 +1217,24 @@ function painelEstados(ind, uf, lado) {
       legenda = `<span>${esc(fmtU(ind, ord[0]))}</span><span class="rampa">${SEQ[tema].map((x) => `<span style="background:${x}"></span>`).join("")}</span><span>${esc(fmtU(ind, ord.at(-1)))}</span>
         <span class="br-ref">cada tom reúne 1/7 dos valores</span>`;
     }
-    const bl = q("blocos"); bl.innerHTML = "";
-    for (const [u, [r, col]] of Object.entries(BLOCOS)) {
+    const foraDe = (u) => val[u] != null && ((c.limite != null && val[u] > c.limite) || (c.meta != null && val[u] < c.meta));
+    const htmlDica = (u) => {
+      const gov = pRef ? quemGoverna(u, meio(pRef)) : null;
+      return `<span class="s">${esc(D.ufs[u])} · ${esc(nomePeriodo(per))}</span><br><b>${esc(fmtU(ind, val[u]))}</b>${foraDe(u) ? ` <span class="s">⚑ ${c.limite != null ? "acima do limite" : "abaixo do mínimo"}</span>` : ""}
+        ${val.BR != null && !extensivo(ind) ? `<br><span class="s">${esc(nomeUF(ind, "BR"))}: ${esc(fmtU(ind, val.BR))}${julga && val[u] != null ? ` · diferença: ${esc(fmtVar(ind, variacao(ind, val.BR, val[u])))}` : ""}</span>` : ""}${gov ? `<br><span class="s">${esc(gov.nome)} (${esc(gov.partido)})</span>` : ""}`;
+    };
+    const bl = q("blocos");
+    if (GEO) {
+      bl.className = "mapa-caixa";
+      pintarMapa(bl, {
+        cor: (u) => val[u] != null ? cor(u) : null,
+        rotulo: (u) => { const gov = pRef ? quemGoverna(u, meio(pRef)) : null; return `${D.ufs[u]}: ${val[u] != null ? fmtU(ind, val[u]) : "sem dado"}${foraDe(u) ? ", fora da regra legal" : ""}${gov ? ", governo de " + gov.nome : ""}`; },
+        dica: (u, ev) => mostrarDica(ev, htmlDica(u)),
+        selecionado: uf, fora: foraDe,
+        aoClicar: (u) => { location.hash = `#/indicador/${ind}?uf=${u}`; },
+      });
+    } else bl.innerHTML = "";
+    if (!GEO) for (const [u, [r, col]] of Object.entries(BLOCOS)) {
       const b = document.createElement("button");
       b.type = "button"; b.className = "bloco"; b.style.gridRow = r + 1; b.style.gridColumn = col + 1; b.textContent = u;
       b.setAttribute("aria-pressed", u === uf);
@@ -1461,7 +1559,9 @@ function origemDe(ind) {
   if (!ORIGEM.has(ind)) ORIGEM.set(ind, fetch(`origem/${ind}.json?v=${VERSAO_DADOS}`).then((r) => r.ok ? r.json() : {}).catch(() => ({})));
   return ORIGEM.get(ind);
 }
-fetch(`dados.json?v=${VERSAO_DADOS}`).then((r) => r.json()).then((dados) => {
+let GEO = null;   // contorno das UFs (site/brasil.json, malha oficial do IBGE)
+const geoPronta = fetch(`brasil.json?v=${VERSAO_DADOS}`).then((r) => r.json()).then((g) => { GEO = g; }).catch(() => {});
+Promise.all([fetch(`dados.json?v=${VERSAO_DADOS}`).then((r) => r.json()), geoPronta]).then(([dados]) => {
   D = dados;
   for (const [ind, porUF] of Object.entries(D.series)) for (const uf in porUF) porUF[uf] = porUF[uf].map((p) => expandir(ind, p));
   montarGestoes();
