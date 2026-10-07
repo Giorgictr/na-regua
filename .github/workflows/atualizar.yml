@@ -20,6 +20,7 @@ concurrency:
 jobs:
   atualizar:
     runs-on: ubuntu-latest
+    timeout-minutes: 340
     steps:
       - uses: actions/checkout@v4
 
@@ -33,9 +34,29 @@ jobs:
       - name: Conferir tabela de governantes
         run: python etl/checar_mandatos.py
 
-      - name: Coletar fontes
+      - name: Testar acesso às fontes (diagnóstico)
         if: github.event_name != 'push'
-        run: python -m etl.rodar
+        continue-on-error: true
+        run: |
+          for u in https://apisidra.ibge.gov.br https://api.bcb.gov.br https://apidatalake.tesouro.gov.br \
+                   http://tabnet.datasus.gov.br https://download.inep.gov.br http://www.ipeadata.gov.br \
+                   https://www.gov.br https://terrabrasilis.dpi.inpe.br https://dataserver-coids.inpe.br \
+                   https://api-comexstat.mdic.gov.br https://aplicacoes.mds.gov.br https://dados.ancine.gov.br \
+                   https://api.salic.cultura.gov.br https://ftp.ibge.gov.br; do
+            printf '%-45s ' "$u"; curl -s -o /dev/null -m 25 -w '%{http_code} %{time_total}s\n' "$u" || echo "sem resposta"
+          done
+
+      - name: Coletar fontes (cada uma isolada, até 40 min)
+        if: github.event_name != 'push'
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          for f in $(python -c "from etl.rodar import FONTES; print(' '.join(FONTES))"); do
+            echo "::group::$f"
+            timeout 40m python -m etl.rodar "$f" || echo "[falha] $f (erro ou tempo esgotado; ficam os dados da última coleta boa)"
+            echo "::endgroup::"
+          done
+          python -m etl.rodar --so-site
 
       - name: Regerar site (sem coletar)
         if: github.event_name == 'push'

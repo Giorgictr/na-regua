@@ -43,6 +43,11 @@ def atualizar(fontes):
     agora = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
     for nome in fontes:
+        # marca "em andamento" antes: se o processo for interrompido (tempo esgotado), fica registrado
+        anterior = status.get(nome, {})
+        status[nome] = {"ok": False, "em": agora, "erro": "coleta interrompida (tempo esgotado ou erro fatal)",
+                        "ultima_ok": anterior.get("em") if anterior.get("ok") else anterior.get("ultima_ok")}
+        STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=1, sort_keys=True))
         try:
             mod = importlib.import_module(f"etl.fontes.{nome}")
             novas = mod.coletar()
@@ -55,7 +60,6 @@ def atualizar(fontes):
             status[nome] = {"ok": True, "em": agora, "linhas": len(novas)}
             print(f"[ok]    {nome}: {len(novas)} linhas")
         except Exception as e:
-            anterior = status.get(nome, {})
             status[nome] = {"ok": False, "em": agora, "erro": f"{type(e).__name__}: {e}",
                             "ultima_ok": anterior.get("em") if anterior.get("ok")
                             else anterior.get("ultima_ok")}

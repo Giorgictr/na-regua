@@ -63,7 +63,8 @@ def baixar(fonte: str, url: str, *, dados: bytes | None = None, ext: str = "json
             break
         except Exception as e:  # rede instável das fontes públicas: tenta de novo
             erro = e
-            time.sleep(5 * (i + 1))
+            # 429 = "muitos pedidos": a fonte pede calma, espera bem mais
+            time.sleep((30 if getattr(e, "code", None) == 429 else 5) * (i + 1))
     else:
         raise RuntimeError(f"{fonte}: falhou {url}: {erro}")
 
