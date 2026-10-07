@@ -1,0 +1,1 @@
+{"flow": "export", "monthDetail": false, "period": {"from": "2012-01", "to": "2025-12"}, "details": ["state"], "metrics": ["metricFOB"]}

@@ -1,0 +1,6 @@
+site/dados
+__pycache__/
+.DS_Store
+_site/
+.playwright-mcp/
+.claude/

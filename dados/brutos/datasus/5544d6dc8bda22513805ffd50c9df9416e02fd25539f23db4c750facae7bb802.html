@@ -1,0 +1,918 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="pt-BR"><HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<TITLE>TabNet Win32 3.3:  &Oacute;bitos por Causas Externas - Brasil</TITLE>
+<LINK REL="stylesheet" HREF="/TABNET/tabnet2.css" TYPE="text/css"><!-- com a opção JCSS -->
+<LINK REL="stylesheet" HREF="/tabnet/tabnetp2.css" MEDIA="print"  TYPE="text/css"><!-- com a opção JCSSP -->
+<script type="text/javascript" src="/TABNET/tabalfa.js"></script>
+</HEAD><BODY>
+ <div name="governo" class="todalargura">
+ <div class="testeira" cellspacing="0" cellpadding="0">
+   <div class="Escondido" style="background-color: #ffcc00;">
+      <div>
+         <a href="http://www.saude.gov.br" target="_blank">
+            <img alt="Ministério da Saúde" src="/cgi/imagem/principal_r1_c1_res.gif" height="21" id="img1" />
+         </a>
+     </div>
+ </div>
+ <div class="testeira" cellspacing="0" cellpadding="0">
+    <div class="info_saude">
+         <a href="/tabnet/tabnet.htm" alt="Informações de Saúde" title="Informações de Saúde">Informa&ccedil;&otilde;es de Sa&uacute;de</a>
+   </div>
+      <div class="marca_tabnet">
+       <p>DATASUS<span>&nbsp;&nbsp;Tecnologia da Informa&ccedil;&atilde;o a Servi&ccedil;o do SUS<a href="http://www.datasus.gov.br" alt="MS/SE/Datasus" title="MS/SE/Datasus"></a></span></p>
+   </div>
+        <div class="ajuda">
+          <a href="/tabnet/tabdescr.htm">Ajuda</a>
+      </div>
+           <div class="notific">
+        <a href="sim/Obitos_Causas_Ext_1996_2012.pdf">Notas T&eacute;cnicas</a></p>
+   </div>       <div class="datasus">
+       <p>DATASUS</p>
+   </div>
+   </div>
+<CENTER>
+<div class="container">
+<FORM ACTION="/cgi/tabcgi.exe?sim/cnv/ext10uf.def" METHOD=POST target = "_blank">
+<div class="titulo">
+  <H2 class="Nivel0"> &Oacute;bitos por Causas Externas - Brasil</H2>
+</div>
+<div class="borda">
+  <div class="corpoperiodo">
+    <div class="linha">
+    <LABEL for="L"><b>Linha</b></LABEL>
+    <SELECT NAME="Linha" ID="L" SIZE=4 >
+    <OPTION VALUE="Região" SELECTED>Regi&atilde;o
+    <OPTION VALUE="Região/Unidade_da_Federação">Regi&atilde;o/Unidade da Federa&ccedil;&atilde;o
+    <OPTION VALUE="Unidade_da_Federação">Unidade da Federa&ccedil;&atilde;o
+    <OPTION VALUE="Grande_Grupo_CID10">Grande Grupo CID10
+    <OPTION VALUE="Grupo_CID10">Grupo CID10
+    <OPTION VALUE="Categoria_CID10">Categoria CID10
+    <OPTION VALUE="Ano_do_Óbito">Ano do &Oacute;bito
+    <OPTION VALUE="Ano/mês_do_Óbito">Ano/m&ecirc;s do &Oacute;bito
+    <OPTION VALUE="Mês_do_Óbito">M&ecirc;s do &Oacute;bito
+    <OPTION VALUE="Faixa_Etária">Faixa Et&aacute;ria
+    <OPTION VALUE="Faixa_Etária_OPS">Faixa Et&aacute;ria OPS
+    <OPTION VALUE="Faixa_Etária_det">Faixa Et&aacute;ria det
+    <OPTION VALUE="Fx.Etária_Menor_1A">Fx.Et&aacute;ria Menor 1A
+    <OPTION VALUE="Sexo">Sexo
+    <OPTION VALUE="Cor/raça">Cor/ra&ccedil;a
+    <OPTION VALUE="Escolaridade">Escolaridade
+    <OPTION VALUE="Estado_civil">Estado civil
+    <OPTION VALUE="Local_ocorrência">Local ocorr&ecirc;ncia
+    <OPTION VALUE="Acid._Trabalho">Acid. Trabalho
+    </SELECT>
+    </div>
+    <div class="coluna">
+    <LABEL for="C"><b>Coluna</b></LABEL>
+    <SELECT NAME="Coluna" ID="C" SIZE=4 >
+    <OPTION VALUE="--Não-Ativa--" SELECTED>N&atilde;o ativa
+    <OPTION VALUE="Região">Regi&atilde;o
+    <OPTION VALUE="Unidade_da_Federação">Unidade da Federa&ccedil;&atilde;o
+    <OPTION VALUE="Grande_Grupo_CID10">Grande Grupo CID10
+    <OPTION VALUE="Grupo_CID10">Grupo CID10
+    <OPTION VALUE="Ano_do_Óbito">Ano do &Oacute;bito
+    <OPTION VALUE="Mês_do_Óbito">M&ecirc;s do &Oacute;bito
+    <OPTION VALUE="Faixa_Etária">Faixa Et&aacute;ria
+    <OPTION VALUE="Faixa_Etária_OPS">Faixa Et&aacute;ria OPS
+    <OPTION VALUE="Faixa_Etária_det">Faixa Et&aacute;ria det
+    <OPTION VALUE="Fx.Etária_Menor_1A">Fx.Et&aacute;ria Menor 1A
+    <OPTION VALUE="Sexo">Sexo
+    <OPTION VALUE="Cor/raça">Cor/ra&ccedil;a
+    <OPTION VALUE="Escolaridade">Escolaridade
+    <OPTION VALUE="Estado_civil">Estado civil
+    <OPTION VALUE="Local_ocorrência">Local ocorr&ecirc;ncia
+    <OPTION VALUE="Acid._Trabalho">Acid. Trabalho
+    </SELECT>
+    </div>
+    <div class="conteudo">
+    <LABEL for="I"><b>Conte&uacute;do</b></LABEL>
+    <SELECT NAME="Incremento" ID="I" SIZE=4 MULTIPLE>
+    <OPTION VALUE="Óbitos_p/Residênc" SELECTED>&Oacute;bitos p/Resid&ecirc;nc
+    <OPTION VALUE="Óbitos_p/Ocorrênc">&Oacute;bitos p/Ocorr&ecirc;nc
+    </SELECT> <P>
+    </div>
+  </div>
+</div>
+<div class="periodo">
+  <LABEL for="A"><H2 class="Nivel0">Per&iacute;odos Dispon&iacute;veis</H2></LABEL>
+  <div class="corpoperiodo">
+  <SELECT NAME="Arquivos" ID="A" SIZE=4 MULTIPLE>
+    <OPTION VALUE="extuf26.dbf" SELECTED >2026
+    <OPTION VALUE="extuf25.dbf">2025
+    <OPTION VALUE="extuf24.dbf">2024
+    <OPTION VALUE="extuf23.dbf">2023
+    <OPTION VALUE="extuf22.dbf">2022
+    <OPTION VALUE="extuf21.dbf">2021
+    <OPTION VALUE="extuf20.dbf">2020
+    <OPTION VALUE="extuf19.dbf">2019
+    <OPTION VALUE="extuf18.dbf">2018
+    <OPTION VALUE="extuf17.dbf">2017
+    <OPTION VALUE="extuf16.dbf">2016
+    <OPTION VALUE="extuf15.dbf">2015
+    <OPTION VALUE="extuf14.dbf">2014
+    <OPTION VALUE="extuf13.dbf">2013
+    <OPTION VALUE="extuf12.dbf">2012
+    <OPTION VALUE="extuf11.dbf">2011
+    <OPTION VALUE="extuf10.dbf">2010
+    <OPTION VALUE="extuf09.dbf">2009
+    <OPTION VALUE="extuf08.dbf">2008
+    <OPTION VALUE="extuf07.dbf">2007
+    <OPTION VALUE="extuf06.dbf">2006
+    <OPTION VALUE="extuf05.dbf">2005
+    <OPTION VALUE="extuf04.dbf">2004
+    <OPTION VALUE="extuf03.dbf">2003
+    <OPTION VALUE="extuf02.dbf">2002
+    <OPTION VALUE="extuf01.dbf">2001
+    <OPTION VALUE="extuf00.dbf">2000
+    <OPTION VALUE="extuf99.dbf">1999
+    <OPTION VALUE="extuf98.dbf">1998
+    <OPTION VALUE="extuf97.dbf">1997
+    <OPTION VALUE="extuf96.dbf">1996
+  </SELECT>
+  </div>
+</div>
+<P>
+<div class="selecoes">
+<H2 class="Nivel0">Sele&ccedil;&otilde;es Dispon&iacute;veis</H2><P>
+<div class="corposelecoes">
+<div class="opcoes">
+<div class="titulo_select"><img id="fig1" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S1','fig1','','','')">
+  <LABEL for="S1">Regi&atilde;o
+  </LABEL>
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SRegião" ID="S1" SIZE=7 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">1 Regi&atilde;o Norte
+    <OPTION VALUE="2">2 Regi&atilde;o Nordeste
+    <OPTION VALUE="3">3 Regi&atilde;o Sudeste
+    <OPTION VALUE="4">4 Regi&atilde;o Sul
+    <OPTION VALUE="5">5 Regi&atilde;o Centro-Oeste
+    <OPTION VALUE="6">0 Ignorado/Exterior
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig2" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S2','fig2','pesqmes2','listahidden2','bt_selecionar2')">
+  <LABEL for="S2">Unidade da Federa&ccedil;&atilde;o
+  </LABEL>
+  <LABEL for="pesqmes2">&nbsp;
+  </LABEL><br />
+  <input name="pesqmes2" class="achefacil" id="pesqmes2"  value="Digite o texto e ache fácil"
+    onkeyup="acha(this,'S2',listahidden2,bt_selecionar2);"
+    onfocus="this.value = '';"
+    onkeypress="if(event.keyCode==13)return false;" />
+  <select name="listahidden2" id="listahidden2" class="boxescondido" multiple size=10
+    onblur="achaopcao(this,'S2',pesqmes2,bt_selecionar2);">
+  </select>
+  <input type="button" class="botaoescondido" name="bt_selecionar2" id="bt_selecionar2" value="" />
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SUnidade_da_Federação" ID="S2" SIZE=10 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">Acre
+    <OPTION VALUE="2">Alagoas
+    <OPTION VALUE="3">Amap&aacute;
+    <OPTION VALUE="4">Amazonas
+    <OPTION VALUE="5">Bahia
+    <OPTION VALUE="6">Cear&aacute;
+    <OPTION VALUE="7">Distrito Federal
+    <OPTION VALUE="8">Esp&iacute;rito Santo
+    <OPTION VALUE="9">Goi&aacute;s
+    <OPTION VALUE="10">Maranh&atilde;o
+    <OPTION VALUE="11">Mato Grosso
+    <OPTION VALUE="12">Mato Grosso do Sul
+    <OPTION VALUE="13">Minas Gerais
+    <OPTION VALUE="14">Par&aacute;
+    <OPTION VALUE="15">Para&iacute;ba
+    <OPTION VALUE="16">Paran&aacute;
+    <OPTION VALUE="17">Pernambuco
+    <OPTION VALUE="18">Piau&iacute;
+    <OPTION VALUE="19">Rio de Janeiro
+    <OPTION VALUE="20">Rio Grande do Norte
+    <OPTION VALUE="21">Rio Grande do Sul
+    <OPTION VALUE="22">Rond&ocirc;nia
+    <OPTION VALUE="23">Roraima
+    <OPTION VALUE="24">Santa Catarina
+    <OPTION VALUE="25">S&atilde;o Paulo
+    <OPTION VALUE="26">Sergipe
+    <OPTION VALUE="27">Tocantins
+    <OPTION VALUE="28">Ignorado/exterior
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig3" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S3','fig3','','','')">
+  <LABEL for="S3">Grande Grupo CID10
+  </LABEL>
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SGrande_Grupo_CID10" ID="S3" SIZE=10 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">V01-V99 Acidentes de transporte
+    <OPTION VALUE="2">W00-X59 Outras causas externas de les&otilde;es acident
+    <OPTION VALUE="3">X60-X84 Les&otilde;es autoprovocadas voluntariamente
+    <OPTION VALUE="4">X85-Y09 Agress&otilde;es
+    <OPTION VALUE="5">Y10-Y34 Eventos cuja inten&ccedil;&atilde;o &eacute; indeterminada
+    <OPTION VALUE="6">Y35-Y36 Interven&ccedil;&otilde;es legais e opera&ccedil;&otilde;es de guerra
+    <OPTION VALUE="7">Y40-Y84 Complic assist&ecirc;ncia m&eacute;dica e cir&uacute;rgica
+    <OPTION VALUE="8">Y85-Y89 Seq&uuml;elas de causas externas
+    <OPTION VALUE="9">Y90-Y98 Fatores suplement relac outras causas
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig4" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S4','fig4','pesqmes4','listahidden4','bt_selecionar4')">
+  <LABEL for="S4">Grupo CID10
+  </LABEL>
+  <LABEL for="pesqmes4">&nbsp;
+  </LABEL><br />
+  <input name="pesqmes4" class="achefacil" id="pesqmes4"  value="Digite o texto e ache fácil"
+    onkeyup="acha(this,'S4',listahidden4,bt_selecionar4);"
+    onfocus="this.value = '';"
+    onkeypress="if(event.keyCode==13)return false;" />
+  <select name="listahidden4" id="listahidden4" class="boxescondido" multiple size=10
+    onblur="achaopcao(this,'S4',pesqmes4,bt_selecionar4);">
+  </select>
+  <input type="button" class="botaoescondido" name="bt_selecionar4" id="bt_selecionar4" value="" />
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SGrupo_CID10" ID="S4" SIZE=10 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">Pedestre traumatizado em um acidente de transporte
+    <OPTION VALUE="2">Ciclista traumatizado em um acidente de transporte
+    <OPTION VALUE="3">Motociclista traumat em um acidente de transporte
+    <OPTION VALUE="4">Ocupante triciclo motorizado traumat acid transp
+    <OPTION VALUE="5">Ocupante autom&oacute;vel traumat acidente transporte
+    <OPTION VALUE="6">Ocupante caminhonete traumat acidente transporte
+    <OPTION VALUE="7">Ocupante ve&iacute;c transp pesado traumat acid transp
+    <OPTION VALUE="8">Ocupante &ocirc;nibus traumat acidente de transporte
+    <OPTION VALUE="9">Outros acidentes de transporte terrestre
+    <OPTION VALUE="10">Acidentes de transporte por &aacute;gua
+    <OPTION VALUE="11">Acidentes de transporte a&eacute;reo e espacial
+    <OPTION VALUE="12">Outros acidentes de transporte e os n&atilde;o especif
+    <OPTION VALUE="13">Quedas
+    <OPTION VALUE="14">Exposi&ccedil;&atilde;o a for&ccedil;as mec&acirc;nicas inanimadas
+    <OPTION VALUE="15">Exposi&ccedil;&atilde;o a for&ccedil;as mec&acirc;nicas animadas
+    <OPTION VALUE="16">Afogamento e submers&atilde;o acidentais
+    <OPTION VALUE="17">Outros riscos acidentais &agrave; respira&ccedil;&atilde;o
+    <OPTION VALUE="18">Expos corr el&eacute;tr, radia&ccedil;&atilde;o e temp press extrem amb
+    <OPTION VALUE="19">Exposi&ccedil;&atilde;o &agrave; fuma&ccedil;a, ao fogo e &agrave;s chamas
+    <OPTION VALUE="20">Contato com fonte de calor ou subst&acirc;ncias quentes
+    <OPTION VALUE="21">Contato com animais e plantas venenosos
+    <OPTION VALUE="22">Exposi&ccedil;&atilde;o &agrave;s for&ccedil;as da natureza
+    <OPTION VALUE="23">Envenenamento acidental e exposi&ccedil;&atilde;o subst nocivas
+    <OPTION VALUE="24">Excesso de esfor&ccedil;os, viagens e priva&ccedil;&otilde;es
+    <OPTION VALUE="25">Exposi&ccedil;&atilde;o acidental a outr fatores e aos n&atilde;o espec
+    <OPTION VALUE="26">Les&otilde;es autoprovocadas intencionalmente
+    <OPTION VALUE="27">Agress&otilde;es
+    <OPTION VALUE="28">Eventos (fatos) cuja inten&ccedil;&atilde;o &eacute; indeterminada
+    <OPTION VALUE="29">Interven&ccedil;&otilde;es legais e opera&ccedil;&otilde;es de guerra
+    <OPTION VALUE="30">Ef advers drog, medic e subst biol&oacute;g finalid terap
+    <OPTION VALUE="31">Acid ocorr pacientes prest cuid m&eacute;dicos e cir&uacute;rg
+    <OPTION VALUE="32">Incid advers atos diagn terap assoc disposit m&eacute;dic
+    <OPTION VALUE="33">Rea&ccedil; anorm compl tard proc cir&uacute;rg m&eacute;d s/men&ccedil; acid
+    <OPTION VALUE="34">Seq&uuml;elas causas externas de morbidade e mortalidad
+    <OPTION VALUE="35">Fatores supl relac causas de morbid e mortalid COP
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig5" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S5','fig5','pesqmes5','listahidden5','bt_selecionar5')">
+  <LABEL for="S5">Categoria CID10
+  </LABEL>
+  <LABEL for="pesqmes5">&nbsp;
+  </LABEL><br />
+  <input name="pesqmes5" class="achefacil" id="pesqmes5"  value="Digite o texto e ache fácil"
+    onkeyup="acha(this,'S5',listahidden5,bt_selecionar5);"
+    onfocus="this.value = '';"
+    onkeypress="if(event.keyCode==13)return false;" />
+  <select name="listahidden5" id="listahidden5" class="boxescondido" multiple size=10
+    onblur="achaopcao(this,'S5',pesqmes5,bt_selecionar5);">
+  </select>
+  <input type="button" class="botaoescondido" name="bt_selecionar5" id="bt_selecionar5" value="" />
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SCategoria_CID10" ID="S5" SIZE=10 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">V01   Pedestre traum colis veic a pedal
+    <OPTION VALUE="2">V02   Pedestre traum colis veic motor 2 3 rodas
+    <OPTION VALUE="3">V03   Pedestre traum colis automov pickup caminhon
+    <OPTION VALUE="4">V04   Pedestre traum colis veic transp pesado onib
+    <OPTION VALUE="5">V05   Pedestre traum colis trem veic ferroviario
+    <OPTION VALUE="6">V06   Pedestre traum colis outr veic nao-motoriz
+    <OPTION VALUE="7">V09   Pedestre traum outr acid transp e NE
+    <OPTION VALUE="8">V10   Ciclista traum colis pedestre animal
+    <OPTION VALUE="9">V11   Ciclista traum colis outr veic a pedal
+    <OPTION VALUE="10">V12   Ciclista traum colis veic motor 2 3 rodas
+    <OPTION VALUE="11">V13   Ciclista traum colis automov pickup caminhon
+    <OPTION VALUE="12">V14   Ciclis traum colis veic transp pesado onibus
+    <OPTION VALUE="13">V15   Ciclista traum colis trem veic ferroviario
+    <OPTION VALUE="14">V16   Ciclista traum colis outr veic nao-motoriz
+    <OPTION VALUE="15">V17   Ciclista traum colis objeto fixo ou parado
+    <OPTION VALUE="16">V18   Ciclista traum acid transp s/colis
+    <OPTION VALUE="17">V19   Ciclista traum acid transp e NE
+    <OPTION VALUE="18">V20   Motociclista traum colis pedestre animal
+    <OPTION VALUE="19">V21   Motociclista traum colis veic pedal
+    <OPTION VALUE="20">V22   Motocicl traum colis veic motor 2 3 rodas
+    <OPTION VALUE="21">V23   Motocicl traum colis automov pickup caminhon
+    <OPTION VALUE="22">V24   Motocicl traum colis veic transp pesado onib
+    <OPTION VALUE="23">V25   Motociclista traum colis trem veic ferrov
+    <OPTION VALUE="24">V26   Motocicl traum colis outr veic nao-motoriz
+    <OPTION VALUE="25">V27   Motocicl traum colis objeto fixo parado
+    <OPTION VALUE="26">V28   Motociclista traum acid transp s/colis
+    <OPTION VALUE="27">V29   Motociclista traum outr acid transp e NE
+    <OPTION VALUE="28">V30   Ocup tricicl mot traum colis pedestre animal
+    <OPTION VALUE="29">V31   Ocup tricicl motoriz traum colis veic pedal
+    <OPTION VALUE="30">V32   Ocup tric mot traum col out veic mot 2 3 rod
+    <OPTION VALUE="31">V33   Ocup tric mot traum col auto pickup caminhon
+    <OPTION VALUE="32">V34   Ocup tric mot traum col veic transp pes onib
+    <OPTION VALUE="33">V35   Ocup tricic mot traum colis trem veic ferrov
+    <OPTION VALUE="34">V36   Ocup tric mot traum colis outr veic n-motor
+    <OPTION VALUE="35">V37   Ocup tricic mot traum colis obj fixo parado
+    <OPTION VALUE="36">V38   Ocup tricic motor traum acid transp s/colis
+    <OPTION VALUE="37">V39   Ocup tricicl mot traum outr acid transp e NE
+    <OPTION VALUE="38">V40   Ocup automovel traum colis pedestre animal
+    <OPTION VALUE="39">V41   Ocup automovel traum colis veic a pedal
+    <OPTION VALUE="40">V42   Ocup autotraum colis outr veic mot 2 3 rodas
+    <OPTION VALUE="41">V43   Ocup automov traum col auto pickup caminhon
+    <OPTION VALUE="42">V44   Ocup autom traum colis veic trans pesad onib
+    <OPTION VALUE="43">V45   Ocup automovel traum colis trem veic ferrov
+    <OPTION VALUE="44">V46   Ocup automov traum colis outr veic n-motor
+    <OPTION VALUE="45">V47   Ocup automovel traum colis obj fixo parado
+    <OPTION VALUE="46">V48   Ocup automovel traum acid transp s/colis
+    <OPTION VALUE="47">V49   Ocup automovel traum outr acid transp e NE
+    <OPTION VALUE="48">V50   Ocup caminhonete traum colis pedestre animal
+    <OPTION VALUE="49">V51   Ocup caminhonete traum colis veic pedal
+    <OPTION VALUE="50">V52   Ocup caminhon traum colis veic mot 2 3 rodas
+    <OPTION VALUE="51">V53   Ocup caminhon traum colis automov caminhon
+    <OPTION VALUE="52">V54   Ocup caminhon traum col veic transp pes onib
+    <OPTION VALUE="53">V55   Ocup caminhon traum colis trem veic ferrov
+    <OPTION VALUE="54">V56   Ocup caminhonete traum colis outr veic n-mot
+    <OPTION VALUE="55">V57   Ocup caminhonete traum colis obj fixo parado
+    <OPTION VALUE="56">V58   Ocup caminhonete traum acid transp s/colis
+    <OPTION VALUE="57">V59   Ocup caminhonete traum outr acid transp NE
+    <OPTION VALUE="58">V60   Ocup veic transp pesado traum colis ped anim
+    <OPTION VALUE="59">V61   Ocup veic transp pesado traum col veic pedal
+    <OPTION VALUE="60">V62   Ocup v transp pes traum col veic mot 2 3 rod
+    <OPTION VALUE="61">V63   Ocup veic tr pesado traum col auto caminhon
+    <OPTION VALUE="62">V64   Ocup v tr pes tr col outr veic tr pes onib
+    <OPTION VALUE="63">V65   Ocup veic tr pes traum col trem veic ferrov
+    <OPTION VALUE="64">V66   Ocup veic tr pesado traum col out veic n-mot
+    <OPTION VALUE="65">V67   Ocup veic tr pesado traum col obj fixo parad
+    <OPTION VALUE="66">V68   Ocup veic tr pesado traum ac transp s/colis
+    <OPTION VALUE="67">V69   Ocup veic tr pesado traum outr ac transp NE
+    <OPTION VALUE="68">V70   Ocup onibus traum colis pedestre animal
+    <OPTION VALUE="69">V71   Ocup onibus traum colis veic a pedal
+    <OPTION VALUE="70">V72   Ocup onibus traum col out veic mot 2 3 rodas
+    <OPTION VALUE="71">V73   Ocup onibus traum colis automovel caminhonet
+    <OPTION VALUE="72">V74   Ocup onibus traum colis veic transp pes onib
+    <OPTION VALUE="73">V75   Ocup onibus traum colis trem veic ferrov
+    <OPTION VALUE="74">V76   Ocup onibus traum colis outr veic n-motor
+    <OPTION VALUE="75">V77   Ocup onibus traum colis objeto fixo parado
+    <OPTION VALUE="76">V78   Ocup onibus traum acid transp s/colis
+    <OPTION VALUE="77">V79   Ocup onibus traum outr acid transp e NE
+    <OPTION VALUE="78">V80   Pess mont anim oc veic anim traum ac transp
+    <OPTION VALUE="79">V81   Ocup trem veic ferroviario traum acid transp
+    <OPTION VALUE="80">V82   Ocup de um bonde traum acid transp
+    <OPTION VALUE="81">V83   Ocup veic esp mot area ind traum ac transp
+    <OPTION VALUE="82">V84   Ocup veic esp mot uso agric traum acid trans
+    <OPTION VALUE="83">V85   Ocup veic mot esp constr traum acid transp
+    <OPTION VALUE="84">V86   Ocup veic outr uso n-via pub traum ac transp
+    <OPTION VALUE="85">V87   Acid trans tipo espec desconh mod transp vit
+    <OPTION VALUE="86">V88   Ac n-trans tipo espec desconh mod transp vit
+    <OPTION VALUE="87">V89   Acid veic mot n-mot tipos de veic NE
+    <OPTION VALUE="88">V90   Acid embarcacao caus afogamento submersao
+    <OPTION VALUE="89">V91   Acid embarcacao causando outr tipo de traum
+    <OPTION VALUE="90">V92   Afog submers rel transp agua s/acid embarc
+    <OPTION VALUE="91">V93   Acid bord emb s/ac bem n caus afog submers
+    <OPTION VALUE="92">V94   Outr acid transp p/agua e os NE
+    <OPTION VALUE="93">V95   Acid de aeronave mot causando traum ao ocup
+    <OPTION VALUE="94">V96   Acid aeronave s/motor causando traum a ocup
+    <OPTION VALUE="95">V97   Outr acid espec de transporte aereo
+    <OPTION VALUE="96">V98   Outr acid transp espec
+    <OPTION VALUE="97">V99   Acid transp NE
+    <OPTION VALUE="98">W00   Queda mesmo nivel envolv gelo e neve
+    <OPTION VALUE="99">W01   Queda mesmo nivel escorr tropec passo falso
+    <OPTION VALUE="100">W02   Queda env patins rodas gelo esqui pranch rod
+    <OPTION VALUE="101">W03   Outr qued mesmo niv colis empurrao outr pess
+    <OPTION VALUE="102">W04   Queda enquanto carreg apoiado p/outr pessoas
+    <OPTION VALUE="103">W05   Queda envolv uma cadeira de rodas
+    <OPTION VALUE="104">W06   Queda de um leito
+    <OPTION VALUE="105">W07   Queda de uma cadeira
+    <OPTION VALUE="106">W08   Queda de outr tipo de mobilia
+    <OPTION VALUE="107">W09   Queda envolv equipamento de playground
+    <OPTION VALUE="108">W10   Queda em ou de escadas ou degraus
+    <OPTION VALUE="109">W11   Queda em ou de escadas de mao
+    <OPTION VALUE="110">W12   Queda em ou de um andaime
+    <OPTION VALUE="111">W13   Queda de ou p/fora edificios outr estruturas
+    <OPTION VALUE="112">W14   Queda de arvore
+    <OPTION VALUE="113">W15   Queda de penhasco
+    <OPTION VALUE="114">W16   Merg pulo agua caus out traum n afog submers
+    <OPTION VALUE="115">W17   Outr quedas de um nivel a outr
+    <OPTION VALUE="116">W18   Outr quedas no mesmo nivel
+    <OPTION VALUE="117">W19   Queda s/especificacao
+    <OPTION VALUE="118">W20   Impacto caus objeto lanc projetado em queda
+    <OPTION VALUE="119">W21   Impacto acid ativo passivo caus equip esport
+    <OPTION VALUE="120">W22   Impacto acid ativo passivo caus outr objetos
+    <OPTION VALUE="121">W23   Apert colhid comprim esmag dentro objetos
+    <OPTION VALUE="122">W24   Contato elevadores instr de transm NCOP
+    <OPTION VALUE="123">W25   Contato c/vidro cortante
+    <OPTION VALUE="124">W26   Contato c/faca espada e punhal
+    <OPTION VALUE="125">W27   Contato c/ferramentas manuais s/motor
+    <OPTION VALUE="126">W28   Contato segadeira mot p/cortar aparar grama
+    <OPTION VALUE="127">W29   Contat out utens manuais ap domest equip mot
+    <OPTION VALUE="128">W30   Contato c/maquinaria agricola
+    <OPTION VALUE="129">W31   Contato c/outr maquinas e c/as NE
+    <OPTION VALUE="130">W32   Projetil de revolver
+    <OPTION VALUE="131">W33   Rifle espingarda armas fogo de maior tamanho
+    <OPTION VALUE="132">W34   Projeteis de outr armas de fogo e das NE
+    <OPTION VALUE="133">W35   Explosao ou ruptura de caldeira
+    <OPTION VALUE="134">W36   Explosao ou ruptura de cilindro de gas
+    <OPTION VALUE="135">W37   Explosao ruptura pneumat tubulac mang press
+    <OPTION VALUE="136">W38   Explosao ruptura outr ap pressurizados espec
+    <OPTION VALUE="137">W39   Queima de fogos de artificio
+    <OPTION VALUE="138">W40   Explosao de outr materiais
+    <OPTION VALUE="139">W41   Exposicao a um jato de alta pressao
+    <OPTION VALUE="140">W42   Exposicao ao ruido
+    <OPTION VALUE="141">W43   Exposicao a vibracao
+    <OPTION VALUE="142">W44   Penetr corpo estranho olho orificio natural
+    <OPTION VALUE="143">W45   Penetracao corpo objeto estranho pele
+    <OPTION VALUE="144">W46   Contato com agulha hipod&eacute;rmica
+    <OPTION VALUE="145">W49   Exposicao outr forcas mecan inanimadas e NE
+    <OPTION VALUE="146">W50   Golpe panc pontape mord escor infl outr pess
+    <OPTION VALUE="147">W51   Colis entre duas pessoas
+    <OPTION VALUE="148">W52   Esmag empurr pisot multidao deband massa
+    <OPTION VALUE="149">W53   Mordedura de rato
+    <OPTION VALUE="150">W54   Mordedura ou golpe provocado p/cao
+    <OPTION VALUE="151">W55   Mordedura golpe provoc outr animais mamif
+    <OPTION VALUE="152">W56   Contato c/animais marinhos
+    <OPTION VALUE="153">W57   Morded picadas inseto outr artrop n-venen
+    <OPTION VALUE="154">W58   Mordedura golpe provoc crocodilo ou alig&aacute;tor
+    <OPTION VALUE="155">W59   Mordedura ou esmag provocado p/outr repteis
+    <OPTION VALUE="156">W60   Contato espinhos plantas ou folhas agucadas
+    <OPTION VALUE="157">W64   Exposicao outr forcas mecan animadas e as NE
+    <OPTION VALUE="158">W65   Afogamento submersao durante banho banheira
+    <OPTION VALUE="159">W66   Afogamento submersao consec queda banheira
+    <OPTION VALUE="160">W67   Afogamento e submersao em piscina
+    <OPTION VALUE="161">W68   Afogamento submersao conseq queda piscina
+    <OPTION VALUE="162">W69   Afogamento e submersao em aguas naturais
+    <OPTION VALUE="163">W70   Afogamento submersao conseq queda aguas nat
+    <OPTION VALUE="164">W73   Outr afogamentos e submersao espec
+    <OPTION VALUE="165">W74   Afogamento e submersao NE
+    <OPTION VALUE="166">W75   Sufocacao e estrangulamento acid na cama
+    <OPTION VALUE="167">W76   Outr enforcamento e estrangulamento acid
+    <OPTION VALUE="168">W77   Risco resp dev desmor queda terra outr subst
+    <OPTION VALUE="169">W78   Inalacao do conteudo gastrico
+    <OPTION VALUE="170">W79   Inalacao ingest aliment caus obstr trat resp
+    <OPTION VALUE="171">W80   Inalac ingest outr obj caus obstr trat resp
+    <OPTION VALUE="172">W81   Confinado aprision ambiente pobre oxigenio
+    <OPTION VALUE="173">W83   Outr riscos espec a respiracao
+    <OPTION VALUE="174">W84   Riscos NE a respiracao
+    <OPTION VALUE="175">W85   Exposicao linhas transm de corrente eletrica
+    <OPTION VALUE="176">W86   Exposicao a outr corrente eletrica espec
+    <OPTION VALUE="177">W87   Exposicao a corrente eletrica NE
+    <OPTION VALUE="178">W88   Exposicao a radiacao ionizante
+    <OPTION VALUE="179">W89   Expos fontes lumin artif visiv luz ultraviol
+    <OPTION VALUE="180">W90   Exposicao outr tipos radiacao nao-ionizante
+    <OPTION VALUE="181">W91   Exposicao a tipo NE de radiacao
+    <OPTION VALUE="182">W92   Exposicao calor excessivo orig artificial
+    <OPTION VALUE="183">W93   Exposicao frio excessivo orig artificial
+    <OPTION VALUE="184">W94   Expos alta baixa variacoes pressao atmosf
+    <OPTION VALUE="185">W99   Exposicao outr fatores ambient artif e NE
+    <OPTION VALUE="186">X00   Expos fogo n-contr edificio outr tipo constr
+    <OPTION VALUE="187">X01   Expos fogo n-contr fora edif out tipo constr
+    <OPTION VALUE="188">X02   Exposicao fogo contr edif outr tipo constr
+    <OPTION VALUE="189">X03   Expos fogo contr fora edif outr tipo constr
+    <OPTION VALUE="190">X04   Exposicao combustao subst muito inflamavel
+    <OPTION VALUE="191">X05   Exposicao a combustao de roupa de dormir
+    <OPTION VALUE="192">X06   Exposicao combustao outr tipo roupa acessor
+    <OPTION VALUE="193">X08   Exposicao outr tipo espec fumaca fogo chamas
+    <OPTION VALUE="194">X09   Exposicao a tipo NE de fumaca fogo chamas
+    <OPTION VALUE="195">X10   Contato bebid alim gord oleo cozinha quentes
+    <OPTION VALUE="196">X11   Contato c/agua corrente quente de torneira
+    <OPTION VALUE="197">X12   Contato c/outr liquidos quentes
+    <OPTION VALUE="198">X13   Contato c/vapor dagua e c/vapores quentes
+    <OPTION VALUE="199">X14   Contato c/ar e gases quentes
+    <OPTION VALUE="200">X15   Contato c/aparelhos domesticos quentes
+    <OPTION VALUE="201">X16   Contato c/aquecedores radiadores e tubulacao
+    <OPTION VALUE="202">X17   Contato motores maquinas ferramentas quentes
+    <OPTION VALUE="203">X18   Contato c/outr metais quentes
+    <OPTION VALUE="204">X19   Contato outr fontes calor subst quentes NE
+    <OPTION VALUE="205">X20   Contato c/serpentes e lagartos venenosos
+    <OPTION VALUE="206">X21   Contato c/aranhas venenosas
+    <OPTION VALUE="207">X22   Contato c/escorpioes
+    <OPTION VALUE="208">X23   Contato c/abelhas vespas e vespoes
+    <OPTION VALUE="209">X24   Contato c/centopeias e miriapodes venenosas
+    <OPTION VALUE="210">X25   Contato c/outr artropodes venenosos
+    <OPTION VALUE="211">X26   Contato animais e plantas marinhos venenosos
+    <OPTION VALUE="212">X27   Contato c/outr animais venenosos espec
+    <OPTION VALUE="213">X28   Contato c/outr plantas venenosas espec
+    <OPTION VALUE="214">X29   Contato animais ou plantas venenosos s/espec
+    <OPTION VALUE="215">X30   Exposicao a calor natural excessivo
+    <OPTION VALUE="216">X31   Exposicao a frio natural excessivo
+    <OPTION VALUE="217">X32   Exposicao a luz solar
+    <OPTION VALUE="218">X33   Vitima de raio
+    <OPTION VALUE="219">X34   Vitima de terremoto
+    <OPTION VALUE="220">X35   Vitima de erupcao vulcanica
+    <OPTION VALUE="221">X36   Vitima avalanc desab terra out mov sup terr
+    <OPTION VALUE="222">X37   Vitima de tempestade cataclismica
+    <OPTION VALUE="223">X38   Vitima de inundacao
+    <OPTION VALUE="224">X39   Exposicao a outr forcas da natureza e as NE
+    <OPTION VALUE="225">X40   Envenen acid analg antipir anti-reum n-opiac
+    <OPTION VALUE="226">X41   Env ac anticon sed hipn antipark psicot NCOP
+    <OPTION VALUE="227">X42   Envenen acid narcot psicodislepticos NCOP
+    <OPTION VALUE="228">X43   Envenen acid outr subst farm sist nerv auton
+    <OPTION VALUE="229">X44   Envenen acid outr drog medic subst biolog NE
+    <OPTION VALUE="230">X45   Envenen acid p/e exposicao ao alcool
+    <OPTION VALUE="231">X46   Envenen acid solv org hidrocarb halog vapor
+    <OPTION VALUE="232">X47   Intox acid outr gases e vapores
+    <OPTION VALUE="233">X48   Envenen acid p/e exposicao a pesticidas
+    <OPTION VALUE="234">X49   Envenen acid outr subst quim nocivas e as NE
+    <OPTION VALUE="235">X50   Excesso exerc movim vigorosos ou repetitivos
+    <OPTION VALUE="236">X51   Viagem e movimento
+    <OPTION VALUE="237">X52   Estadia prolongada ambiente agravitacional
+    <OPTION VALUE="238">X53   Falta de alimento
+    <OPTION VALUE="239">X54   Falta de agua
+    <OPTION VALUE="240">X57   Privacao NE
+    <OPTION VALUE="241">X58   Exposicao a outr fatores espec
+    <OPTION VALUE="242">X59   Exposicao a fatores NE
+    <OPTION VALUE="243">X60   Auto-int int analg antipir anti-reum n-opiac
+    <OPTION VALUE="244">X61   Auto-int int a-conv sed hip a-park psic NCOP
+    <OPTION VALUE="245">X62   Auto-intox intenc narcot psicodislept NCOP
+    <OPTION VALUE="246">X63   Auto-int int outr subst farm sist nerv auton
+    <OPTION VALUE="247">X64   Auto-int intenc out drog med subst biolog NE
+    <OPTION VALUE="248">X65   Auto-intox voluntaria p/alcool
+    <OPTION VALUE="249">X66   Auto-int int solv org hidrocarb halog vapor
+    <OPTION VALUE="250">X67   Auto-intox intenc p/outr gases e vapores
+    <OPTION VALUE="251">X68   Auto-intox intenc a pesticidas
+    <OPTION VALUE="252">X69   Auto-int intenc outr prod quim subst noc NE
+    <OPTION VALUE="253">X70   Lesao autoprov intenc enforc estrang sufoc
+    <OPTION VALUE="254">X71   Lesao autoprov intenc p/afogamento submersao
+    <OPTION VALUE="255">X72   Lesao autoprov intenc disp arma fogo de mao
+    <OPTION VALUE="256">X73   Les autoprov int disp arm fog maior calibre
+    <OPTION VALUE="257">X74   Lesao autopr intenc disp outr arma fogo e NE
+    <OPTION VALUE="258">X75   Lesao autoprov intenc p/disp explosivos
+    <OPTION VALUE="259">X76   Lesao autoprov intenc fumaca fogo e chamas
+    <OPTION VALUE="260">X77   Lesao autopr int vapor agua gas  obj quent
+    <OPTION VALUE="261">X78   Lesao autoprov intenc obj cortante  penetr
+    <OPTION VALUE="262">X79   Lesao autoprov intenc p/objeto contundente
+    <OPTION VALUE="263">X80   Lesao autoprov intenc precip lugar elevado
+    <OPTION VALUE="264">X81   Lesao autoprov intenc precip perm obj movim
+    <OPTION VALUE="265">X82   Lesao autoprov intenc impacto veic a motor
+    <OPTION VALUE="266">X83   Lesao autoprov intenc p/outr meios espec
+    <OPTION VALUE="267">X84   Lesao autoprov intenc p/meios NE
+    <OPTION VALUE="268">X85   Agressao meio drog medic e subst biologicas
+    <OPTION VALUE="269">X86   Agressao p/meio de subst corrosivas
+    <OPTION VALUE="270">X87   Agressao p/pesticidas
+    <OPTION VALUE="271">X88   Agressao p/meio de gases e vapores
+    <OPTION VALUE="272">X89   Agressao outr prod quim subst nocivas espec
+    <OPTION VALUE="273">X90   Agressao prod quimicos e subst nocivas NE
+    <OPTION VALUE="274">X91   Agressao enforc estrangulamento sufocacao
+    <OPTION VALUE="275">X92   Agressao p/meio de afogamento e submersao
+    <OPTION VALUE="276">X93   Agressao disparo de arma de fogo de mao
+    <OPTION VALUE="277">X94   Agressao disparo arma fogo de maior calibre
+    <OPTION VALUE="278">X95   Agressao disparo outr arma de fogo ou NE
+    <OPTION VALUE="279">X96   Agressao p/meio de material explosivo
+    <OPTION VALUE="280">X97   Agressao p/meio de fumaca fogo e chamas
+    <OPTION VALUE="281">X98   Agressao vapor agua gases ou objetos quentes
+    <OPTION VALUE="282">X99   Agressao objeto cortante ou penetrante
+    <OPTION VALUE="283">Y00   Agressao p/meio de um objeto contundente
+    <OPTION VALUE="284">Y01   Agressao p/meio projecao de um lugar elevado
+    <OPTION VALUE="285">Y02   Agressao proj coloc vitima obj movimento
+    <OPTION VALUE="286">Y03   Agressao p/meio de impacto veic a motor
+    <OPTION VALUE="287">Y04   Agressao p/meio de forca corporal
+    <OPTION VALUE="288">Y05   Agressao sexual p/meio de forca fisica
+    <OPTION VALUE="289">Y06   Negligencia e abandono
+    <OPTION VALUE="290">Y07   Outr sindr de maus tratos
+    <OPTION VALUE="291">Y08   Agressao p/outr meios espec
+    <OPTION VALUE="292">Y09   Agressao p/meios NE
+    <OPTION VALUE="293">Y10   Env analg antipir antireum n-opiac int n det
+    <OPTION VALUE="294">Y11   Env antic sed hipn antip psic NCOP int n det
+    <OPTION VALUE="295">Y12   Envenen narcot psicodislept NCOP int n det
+    <OPTION VALUE="296">Y13   Env out subst farm sist nerv auton int n det
+    <OPTION VALUE="297">Y14   Env out drog med subst biolog e NE int n det
+    <OPTION VALUE="298">Y15   Envenen alcool intencao nao determinada
+    <OPTION VALUE="299">Y16   Env solv org hidrocarb halog vap int n det
+    <OPTION VALUE="300">Y17   Envenen outr gases vapores intenc n det
+    <OPTION VALUE="301">Y18   Envenen pesticidas intencao nao determinada
+    <OPTION VALUE="302">Y19   Env out prod quim subst noc e NE int n det
+    <OPTION VALUE="303">Y20   Enforc estrang sufoc intenc nao determinada
+    <OPTION VALUE="304">Y21   Afogamento submersao intenc nao determinada
+    <OPTION VALUE="305">Y22   Disparo de pistola intencao nao determinada
+    <OPTION VALUE="306">Y23   Disparo arma fogo maior calibre intenc n det
+    <OPTION VALUE="307">Y24   Disparo outr arma fogo e NE intenc nao det
+    <OPTION VALUE="308">Y25   Contato c/material explosivo intenc n det
+    <OPTION VALUE="309">Y26   Exposicao fumaca fogo chamas intenc n det
+    <OPTION VALUE="310">Y27   Exposic vapor agua gas obj quente int n det
+    <OPTION VALUE="311">Y28   Contato obj cortante penetrante intenc n det
+    <OPTION VALUE="312">Y29   Contato obj contundente intenc n det
+    <OPTION VALUE="313">Y30   Queda salto empurr lugar elev intenc n det
+    <OPTION VALUE="314">Y31   Queda perman corrida obj mov intenc n det
+    <OPTION VALUE="315">Y32   Impacto veic a motor intenc nao determinada
+    <OPTION VALUE="316">Y33   Outr fatos ou eventos espec intenc n det
+    <OPTION VALUE="317">Y34   Fatos ou eventos NE e intenc nao determinada
+    <OPTION VALUE="318">Y35   Intervencao legal
+    <OPTION VALUE="319">Y36   Operacoes de guerra
+    <OPTION VALUE="320">Y40   Antibioticos sistemicos
+    <OPTION VALUE="321">Y41   Outr antiinfecc e antiparasit sistemicos
+    <OPTION VALUE="322">Y42   Hormonios subst sintet antagonistas NCOP
+    <OPTION VALUE="323">Y43   Subst de acao prim sistemica
+    <OPTION VALUE="324">Y44   Subst farm atuam prim s/constit sangue
+    <OPTION VALUE="325">Y45   Subst analges antipiret e antiinflamatorias
+    <OPTION VALUE="326">Y46   Drogas anticonvulsiv e antiparkinsonianas
+    <OPTION VALUE="327">Y47   Sedativos hipnoticos e tranquilizantes
+    <OPTION VALUE="328">Y48   Anestesicos e gases terapeuticos
+    <OPTION VALUE="329">Y49   Subst psicotropicas NCOP
+    <OPTION VALUE="330">Y50   Estimulantes do sist nervoso central NCOP
+    <OPTION VALUE="331">Y51   Drogas que atuam prim s/sist nerv auton
+    <OPTION VALUE="332">Y52   Subst que atuam prim aparelho cardiovascular
+    <OPTION VALUE="333">Y53   Subst que atuam prim aparelho gastrointest
+    <OPTION VALUE="334">Y54   Subst atuam prim metab agua sais min ac uric
+    <OPTION VALUE="335">Y55   Subst atuam prim musc lisos esquelet ap resp
+    <OPTION VALUE="336">Y56   Subst topic pele membr muc uso oft otor dent
+    <OPTION VALUE="337">Y57   Outr drogas e medicamentos e as NE
+    <OPTION VALUE="338">Y58   Vacinas bacter
+    <OPTION VALUE="339">Y59   Outr vacinas e subst biologicas e as NE
+    <OPTION VALUE="340">Y60   Cort punc perf hemorr acid cuid med cirurg
+    <OPTION VALUE="341">Y61   Obj estranho deix acid prest cuid cirurg med
+    <OPTION VALUE="342">Y62   Asseps insuf prest cuidados cirurg e medicos
+    <OPTION VALUE="343">Y63   Erros dosagem prest cuidados med e cirurg
+    <OPTION VALUE="344">Y64   Medicamentos ou subst biolog contaminados
+    <OPTION VALUE="345">Y65   Outr acid durante prest cuid medic cirurg
+    <OPTION VALUE="346">Y66   Nao admin de cuidado medico e cirurgico
+    <OPTION VALUE="347">Y69   Acid NE durante prest cuidado medic cirurg
+    <OPTION VALUE="348">Y70   Disp anestesiologia assoc incid adversos
+    <OPTION VALUE="349">Y71   Disp cardiovasculares assoc incid adversos
+    <OPTION VALUE="350">Y72   Disp utiliz otorrino assoc incid adversos
+    <OPTION VALUE="351">Y73   Disp usados gastroent urolog assoc incid adv
+    <OPTION VALUE="352">Y74   Disp gerais uso hosp pessoal assoc incid adv
+    <OPTION VALUE="353">Y75   Disp utiliz neurolog assoc incid adversos
+    <OPTION VALUE="354">Y76   Disp utiliz obstetr ginec assoc incid adv
+    <OPTION VALUE="355">Y77   Disp utiliz oftalmo assoc incid adversos
+    <OPTION VALUE="356">Y78   Disp utiliz radiologia assoc incid adversos
+    <OPTION VALUE="357">Y79   Disp ortopedicos assoc a incidentes adversos
+    <OPTION VALUE="358">Y80   Disp utiliz med fisica assoc incid adversos
+    <OPTION VALUE="359">Y81   Disp util cirurg geral plast assoc incid adv
+    <OPTION VALUE="360">Y82   Outr disp assoc incidentes adversos e os NE
+    <OPTION VALUE="361">Y83   Reac anorm compl tard interv cirurg s/acid
+    <OPTION VALUE="362">Y84   Reac anorm compl tard out proc med s/acid
+    <OPTION VALUE="363">Y85   Sequelas de acid transp
+    <OPTION VALUE="364">Y86   Sequelas de outr acid
+    <OPTION VALUE="365">Y87   Seq lesao autopr inten agress fato int indet
+    <OPTION VALUE="366">Y88   Sequelas cuid med cirurg consid causa ext
+    <OPTION VALUE="367">Y89   Sequelas de outr causas externas
+    <OPTION VALUE="368">Y90   Evidencia alcoolismo det p/taxas alcoolemia
+    <OPTION VALUE="369">Y91   Evidencia alcoolismo determ p/nivel da intox
+    <OPTION VALUE="370">Y95   Circunst relat condicoes nosocomiais
+    <OPTION VALUE="371">Y96   Circunst relat condicoes de trabalho
+    <OPTION VALUE="372">Y97   Circunst relat condicoes poluicao ambiental
+    <OPTION VALUE="373">Y98   Circunst relat condicoes do modo de vida
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig6" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S6','fig6','pesqmes6','listahidden6','bt_selecionar6')">
+  <LABEL for="S6">Faixa Et&aacute;ria
+  </LABEL>
+  <LABEL for="pesqmes6">&nbsp;
+  </LABEL><br />
+  <input name="pesqmes6" class="achefacil" id="pesqmes6"  value="Digite o texto e ache fácil"
+    onkeyup="acha(this,'S6',listahidden6,bt_selecionar6);"
+    onfocus="this.value = '';"
+    onkeypress="if(event.keyCode==13)return false;" />
+  <select name="listahidden6" id="listahidden6" class="boxescondido" multiple size=10
+    onblur="achaopcao(this,'S6',pesqmes6,bt_selecionar6);">
+  </select>
+  <input type="button" class="botaoescondido" name="bt_selecionar6" id="bt_selecionar6" value="" />
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SFaixa_Etária" ID="S6" SIZE=10 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">Menor 1 ano
+    <OPTION VALUE="2">1 a 4 anos
+    <OPTION VALUE="3">5 a 9 anos
+    <OPTION VALUE="4">10 a 14 anos
+    <OPTION VALUE="5">15 a 19 anos
+    <OPTION VALUE="6">20 a 29 anos
+    <OPTION VALUE="7">30 a 39 anos
+    <OPTION VALUE="8">40 a 49 anos
+    <OPTION VALUE="9">50 a 59 anos
+    <OPTION VALUE="10">60 a 69 anos
+    <OPTION VALUE="11">70 a 79 anos
+    <OPTION VALUE="12">80 anos e mais
+    <OPTION VALUE="13">Idade ignorada
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig7" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S7','fig7','pesqmes7','listahidden7','bt_selecionar7')">
+  <LABEL for="S7">Faixa Et&aacute;ria OPS
+  </LABEL>
+  <LABEL for="pesqmes7">&nbsp;
+  </LABEL><br />
+  <input name="pesqmes7" class="achefacil" id="pesqmes7"  value="Digite o texto e ache fácil"
+    onkeyup="acha(this,'S7',listahidden7,bt_selecionar7);"
+    onfocus="this.value = '';"
+    onkeypress="if(event.keyCode==13)return false;" />
+  <select name="listahidden7" id="listahidden7" class="boxescondido" multiple size=10
+    onblur="achaopcao(this,'S7',pesqmes7,bt_selecionar7);">
+  </select>
+  <input type="button" class="botaoescondido" name="bt_selecionar7" id="bt_selecionar7" value="" />
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SFaixa_Etária_OPS" ID="S7" SIZE=10 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">Menor 1 ano
+    <OPTION VALUE="2">1 a 4 anos
+    <OPTION VALUE="3">5 a 14 anos
+    <OPTION VALUE="4">15 a 24 anos
+    <OPTION VALUE="5">25 a 34 anos
+    <OPTION VALUE="6">35 a 44 anos
+    <OPTION VALUE="7">45 a 54 anos
+    <OPTION VALUE="8">55 a 64 anos
+    <OPTION VALUE="9">65 a 74 anos
+    <OPTION VALUE="10">75 anos e mais
+    <OPTION VALUE="11">Idade ignorada
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig8" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S8','fig8','pesqmes8','listahidden8','bt_selecionar8')">
+  <LABEL for="S8">Faixa Et&aacute;ria det
+  </LABEL>
+  <LABEL for="pesqmes8">&nbsp;
+  </LABEL><br />
+  <input name="pesqmes8" class="achefacil" id="pesqmes8"  value="Digite o texto e ache fácil"
+    onkeyup="acha(this,'S8',listahidden8,bt_selecionar8);"
+    onfocus="this.value = '';"
+    onkeypress="if(event.keyCode==13)return false;" />
+  <select name="listahidden8" id="listahidden8" class="boxescondido" multiple size=10
+    onblur="achaopcao(this,'S8',pesqmes8,bt_selecionar8);">
+  </select>
+  <input type="button" class="botaoescondido" name="bt_selecionar8" id="bt_selecionar8" value="" />
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SFaixa_Etária_det" ID="S8" SIZE=10 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">0 a 6 dias
+    <OPTION VALUE="2">7 a 27 dias
+    <OPTION VALUE="3">28 a 364 dias
+    <OPTION VALUE="4">Menor 1 ano (ign)
+    <OPTION VALUE="5">1 a 4 anos
+    <OPTION VALUE="6">5 a 9 anos
+    <OPTION VALUE="7">10 a 14 anos
+    <OPTION VALUE="8">15 a 19 anos
+    <OPTION VALUE="9">20 a 24 anos
+    <OPTION VALUE="10">25 a 29 anos
+    <OPTION VALUE="11">30 a 34 anos
+    <OPTION VALUE="12">35 a 39 anos
+    <OPTION VALUE="13">40 a 44 anos
+    <OPTION VALUE="14">45 a 49 anos
+    <OPTION VALUE="15">50 a 54 anos
+    <OPTION VALUE="16">55 a 59 anos
+    <OPTION VALUE="17">60 a 64 anos
+    <OPTION VALUE="18">65 a 69 anos
+    <OPTION VALUE="19">70 a 74 anos
+    <OPTION VALUE="20">75 a 79 anos
+    <OPTION VALUE="21">80 anos e mais
+    <OPTION VALUE="22">Idade ignorada
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig9" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S9','fig9','','','')">
+  <LABEL for="S9">Fx.Et&aacute;ria Menor 1A
+  </LABEL>
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SFx.Etária_Menor_1A" ID="S9" SIZE=5 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">0 a 6 dias
+    <OPTION VALUE="2">7 a 27 dias
+    <OPTION VALUE="3">28 a 364 dias
+    <OPTION VALUE="4">Menor 1 ano (ign)
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig10" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S10','fig10','','','')">
+  <LABEL for="S10">Sexo
+  </LABEL>
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SSexo" ID="S10" SIZE=4 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">Masc
+    <OPTION VALUE="2">Fem
+    <OPTION VALUE="3">Ign
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig11" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S11','fig11','','','')">
+  <LABEL for="S11">Cor/ra&ccedil;a
+  </LABEL>
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SCor/raça" ID="S11" SIZE=7 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">Branca
+    <OPTION VALUE="2">Preta
+    <OPTION VALUE="3">Amarela
+    <OPTION VALUE="4">Parda
+    <OPTION VALUE="5">Ind&iacute;gena
+    <OPTION VALUE="6">Ignorado
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig12" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S12','fig12','','','')">
+  <LABEL for="S12">Escolaridade
+  </LABEL>
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SEscolaridade" ID="S12" SIZE=9 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">Nenhuma
+    <OPTION VALUE="2">1 a 3 anos
+    <OPTION VALUE="3">4 a 7 anos
+    <OPTION VALUE="4">8 a 11 anos
+    <OPTION VALUE="5">12 anos e mais
+    <OPTION VALUE="6">1 a 8 anos
+    <OPTION VALUE="7">9 a 11 anos
+    <OPTION VALUE="8">Ignorado
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig13" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S13','fig13','','','')">
+  <LABEL for="S13">Estado civil
+  </LABEL>
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SEstado_civil" ID="S13" SIZE=7 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">Solteiro
+    <OPTION VALUE="2">Casado
+    <OPTION VALUE="3">Vi&uacute;vo
+    <OPTION VALUE="4">Separado judicialmente
+    <OPTION VALUE="5">Outro
+    <OPTION VALUE="6">Ignorado
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig14" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S14','fig14','','','')">
+  <LABEL for="S14">Local ocorr&ecirc;ncia
+  </LABEL>
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SLocal_ocorrência" ID="S14" SIZE=7 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">Hospital
+    <OPTION VALUE="2">Outro estabelecimento de sa&uacute;de
+    <OPTION VALUE="3">Domic&iacute;lio
+    <OPTION VALUE="4">Via p&uacute;blica
+    <OPTION VALUE="5">Outros
+    <OPTION VALUE="6">Ignorado
+  </SELECT>
+</div>
+<P>
+<div class="titulo_select"><img id="fig15" src="/cgi/imagem/ico_mais_t.png"
+  onclick="exibirselect('S15','fig15','','','')">
+  <LABEL for="S15">Acid. Trabalho
+  </LABEL>
+  <SELECT scrolling="auto" class="fundo_select_tabnet" NAME="SAcid._Trabalho" ID="S15" SIZE=4 MULTIPLE>
+  <OPTION VALUE="TODAS_AS_CATEGORIAS__" SELECTED >Todas as categorias
+    <OPTION VALUE="1">Sim
+    <OPTION VALUE="2">N&atilde;o
+    <OPTION VALUE="3">Ignorado
+  </SELECT>
+</div>
+<P>
+<P>
+</div>
+</div>
+<div class="input">
+  <div class="marcadores">
+    <div  class="esq">
+      <input type="checkbox" name="opcoes" id="O" VALUE="ordenar" onclick ="marcaTodos(this,O1);"><label for="O">Ordenar pelos valores da coluna</label>&nbsp;&nbsp;
+      <input type="checkbox" name="zeradas" id="Z" VALUE="exibirlz"onclick ="marcaTodos(this,Z1);"><label for="Z">Exibir linhas zeradas</label>
+    </div>
+    <div class="dir">
+      <label class="formato" for="F">Formato</label>
+      <input type="radio" name="formato" id="F" VALUE="table" CHECKED onclick="selecao_sincrona(this.form,formato,formato1)">Tabela com bordas
+      <input type="radio" name="formato" id="F" VALUE="pre" onclick="selecao_sincrona(this.form,formato,formato1)">Texto pr&eacute;-formatado
+      <input type="radio" name="formato" id="F" VALUE="prn" onclick="selecao_sincrona(this.form,formato,formato1)">Colunas separadas por ";" <br />
+    </div>
+  </div>
+  <div class="botoes">
+    <input class="mostra" name="mostre" type="submit" VALUE=Mostra>
+    <input class="limpa" name="limpa" type="reset" VALUE=Limpa><br />
+  </div>
+</div>
+</FORM>
+</div>
+<div class="rodape_htm">
+ Fonte: MS/SVSA/CGIAE - Sistema de Informações sobre Mortalidade - SIM<br><br>
+ <b>Notas</b>:
+ <ol>
+ <li>Dados finais disponíveis até 2024 - data de extração 02/12/2025.
+ <li>Dados de 2025 - Preliminares - data de extração 28/07/2026.
+ <li>Dados de 2026 - 2a prévia - data de extração 01/09/2026.
+ </ol>
+ <p>
+ <p>
+<hr class="escondido" align=center width="100%" size="2" />
+
+<table class="escondido" border="0">
+   <tr valign="middle" align="center">
+      <td>
+         <a href="https://datasus.saude.gov.br/transferencia-de-arquivos/">
+            <img src="http://tabnet.datasus.gov.br/cgi/imagem/tabwin.gif" height="66" border="0" alt="Nova Versão - 30/10/2009"></a></td>
+      <td>
+         <a href="https://datasus.saude.gov.br/transferencia-de-arquivos/"> Veja a versão do Tab para Windows (TABWIN)</a></td>
+   </tr>
+   </table>
+
+<hr class="escondido" align=center width="100%" size="2" />
+
+</div>
+</div>
+</BODY></HTML>

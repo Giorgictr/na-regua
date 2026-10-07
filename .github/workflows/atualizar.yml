@@ -1,0 +1,75 @@
+name: Atualizar indicadores
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"   # toda segunda, 06:00 de Brasília
+  workflow_dispatch:       # botão "Run workflow" para rodar na hora
+  push:
+    branches: [main]
+    paths: ["site/**", "etl/**", "dados/mandatos.csv"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: atualizar
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Conferir tabela de governantes
+        run: python etl/checar_mandatos.py
+
+      - name: Coletar fontes
+        if: github.event_name != 'push'
+        run: python -m etl.rodar
+
+      - name: Regerar site (sem coletar)
+        if: github.event_name == 'push'
+        run: python -m etl.rodar --so-site
+
+      - name: Gravar no repositório (trilha de auditoria)
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "atualizador-automatico"
+          git config user.email "actions@users.noreply.github.com"
+          git add dados site/dados.json
+          if git diff --cached --quiet; then
+            echo "nada mudou"
+          else
+            git commit -m "dados: coleta de $(date -u +%F)"
+            git push
+          fi
+
+      - name: Montar site
+        run: |
+          mkdir -p _site
+          cp -r site/index.html site/app.js site/estilo.css site/dados.json site/origem site/favicon.ico _site/
+          cp -r dados _site/dados
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    needs: atualizar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

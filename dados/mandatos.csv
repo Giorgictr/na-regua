@@ -1,0 +1,179 @@
+esfera,uf,nome,partido,inicio,fim,tipo,mandato_eleitoral,fonte
+federal,BR,Dilma Rousseff,PT,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+federal,BR,Dilma Rousseff,PT,2015-01-01,2016-05-11,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+federal,BR,Michel Temer,PMDB,2016-05-12,2016-08-30,interino,2015-2018,https://agenciabrasil.ebc.com.br/politica/noticia/2016-05/michel-temer-e-notificado-sobre-afastamento-de-dilma
+federal,BR,Michel Temer,PMDB,2016-08-31,2018-12-31,vice_assumiu,2015-2018,https://www12.senado.leg.br/noticias/materias/2016/08/31/michel-temer-toma-posse-na-presidencia-da-republica
+federal,BR,Jair Bolsonaro,PSL,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+federal,BR,Lula,PT,2023-01-01,,eleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,AC,Tião Viana,PT,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,AC,Tião Viana,PT,2015-01-01,2018-12-31,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,AC,Gladson Cameli,PP,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,AC,Gladson Cameli,PP,2023-01-01,2026-04-01,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,AC,Mailza Assis,PP,2026-04-02,,vice_assumiu,2023-2026,https://agencia.ac.gov.br/acre-retoma-lideranca-feminina-no-governo-com-a-posse-de-mailza-assis-e-da-continuidade-a-uma-historia-de-avancos-e-inclusao/
+estadual,AL,Teotônio Vilela Filho,PSDB,2011-01-01,2014-12-31,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,AL,Renan Filho,PMDB,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,AL,Renan Filho,MDB,2019-01-01,2022-04-01,reeleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,AL,Klever Loureiro,sem partido,2022-04-02,2022-05-14,interino,2019-2022,https://www.tnh1.com.br/noticia/nid/governador-de-alagoas-renan-filho-renuncia-e-desembargador-klever-loureiro-assume-o-cargo/
+estadual,AL,Paulo Dantas,MDB,2022-05-15,2022-10-10,eleito_indireto,2019-2022,https://www.al.al.leg.br/comunicacao/noticias/democratica-e-constitucional-assembleia-realiza-eleicao-indireta-para-o-governo-do-estado
+estadual,AL,José Wanderley Neto,MDB,2022-10-11,2022-10-23,interino,2019-2022,https://agenciabrasil.ebc.com.br/justica/noticia/2022-10/stj-afasta-governador-de-alagoas-em-investigacao-sobre-corrupcao
+estadual,AL,Paulo Dantas,MDB,2022-10-24,2022-12-31,eleito_indireto,2019-2022,https://agenciabrasil.ebc.com.br/justica/noticia/2022-10/stf-suspende-afastamento-do-governador-de-alagoas
+estadual,AL,Paulo Dantas,MDB,2023-01-01,,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,AM,Omar Aziz,PMN,2011-01-01,2014-04-03,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,AM,José Melo,PROS,2014-04-04,2014-12-31,vice_assumiu,2011-2014,https://www.aleam.gov.br/wp-content/uploads/2024/09/Edicao41903042014.pdf
+estadual,AM,José Melo,PROS,2015-01-01,2017-05-08,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,AM,David Almeida,PSD,2017-05-09,2017-10-03,interino,2015-2018,https://agenciabrasil.ebc.com.br/politica/noticia/2017-05/presidente-da-assembleia-legislativa-do-amazonas-assume-governo-do-am
+estadual,AM,Amazonino Mendes,PDT,2017-10-04,2018-12-31,eleito,2015-2018,https://www.tse.jus.br/comunicacao/noticias/2017/Agosto/amozino-mendes-e-eleito-novo-governador-do-amazonas
+estadual,AM,Wilson Lima,PSC,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,AM,Wilson Lima,UNIÃO,2023-01-01,2026-04-03,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,AM,Roberto Cidade,UNIÃO,2026-04-04,2026-05-03,interino,2023-2026,https://www.aleam.gov.br/presidente-roberto-cidade-assume-interinamente-governo-do-amazonas/
+estadual,AM,Roberto Cidade,UNIÃO,2026-05-04,,eleito_indireto,2023-2026,https://agenciabrasil.ebc.com.br/justica/noticia/2026-05/roberto-cidade-e-eleito-governador-do-amazonas-em-eleicao-indireta
+estadual,AP,Camilo Capiberibe,PSB,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,AP,Waldez Góes,PDT,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,AP,Waldez Góes,PDT,2019-01-01,2022-12-31,reeleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,AP,Clécio Luís,SOLIDARIEDADE,2023-01-01,,eleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,BA,Jaques Wagner,PT,2011-01-01,2014-12-31,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,BA,Rui Costa,PT,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,BA,Rui Costa,PT,2019-01-01,2022-12-31,reeleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,BA,Jerônimo Rodrigues,PT,2023-01-01,,eleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,CE,Cid Gomes,PSB,2011-01-01,2014-12-31,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,CE,Camilo Santana,PT,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,CE,Camilo Santana,PT,2019-01-01,2022-04-01,reeleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,CE,Izolda Cela,PDT,2022-04-02,2022-12-31,vice_assumiu,2019-2022,https://www.ceara.gov.br/2022/04/03/izolda-cela-se-torna-a-primeira-mulher-a-assumir-o-governo-do-ceara/
+estadual,CE,Elmano de Freitas,PT,2023-01-01,,eleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,DF,Agnelo Queiroz,PT,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,DF,Rodrigo Rollemberg,PSB,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,DF,Ibaneis Rocha,MDB,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,DF,Ibaneis Rocha,MDB,2023-01-01,2023-01-08,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,DF,Celina Leão,PP,2023-01-09,2023-03-14,interino,2023-2026,https://agenciabrasil.ebc.com.br/politica/noticia/2023-01/julgamento-no-stf-termina-em-9-2-para-afastar-governador-do-df
+estadual,DF,Ibaneis Rocha,MDB,2023-03-15,2026-03-27,reeleito,2023-2026,https://noticias.stf.jus.br/postsnoticias/stf-autoriza-retorno-de-ibaneis-rocha-ao-governo-do-distrito-federal/
+estadual,DF,Celina Leão,PP,2026-03-28,,vice_assumiu,2023-2026,https://www.cl.df.gov.br/-/celina-leao-toma-posse-como-governadora-do-distrito-federal
+estadual,ES,Renato Casagrande,PSB,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,ES,Paulo Hartung,PMDB,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,ES,Renato Casagrande,PSB,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,ES,Renato Casagrande,PSB,2023-01-01,2026-04-01,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,ES,Ricardo Ferraço,MDB,2026-04-02,,vice_assumiu,2023-2026,https://www.es.gov.br/Noticia/ricardo-ferraco-toma-posse-como-governador-do-espirito-santo
+estadual,GO,Marconi Perillo,PSDB,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,GO,Marconi Perillo,PSDB,2015-01-01,2018-04-06,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,GO,José Eliton,PSDB,2018-04-07,2018-12-31,vice_assumiu,2015-2018,https://portal.al.go.leg.br/noticias/92953/jose-eliton-e-empossado-governador-de-goias-em-sessao-extraordinaria-na-assembleia-legislativa-neste-sabado
+estadual,GO,Ronaldo Caiado,DEM,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,GO,Ronaldo Caiado,UNIÃO,2023-01-01,2026-03-30,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,GO,Daniel Vilela,MDB,2026-03-31,,vice_assumiu,2023-2026,https://portal.al.go.leg.br/noticias/163542/daniel-vilela-toma-posse-como-governador-do-estado-de-goias
+estadual,MA,Roseana Sarney,PMDB,2011-01-01,2014-12-09,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,MA,Arnaldo Melo,PMDB,2014-12-10,2014-12-31,interino,2011-2014,https://agenciabrasil.ebc.com.br/politica/noticia/2014-12/roseana-sarney-renuncia-ao-governo-do-maranhao
+estadual,MA,Flávio Dino,PCdoB,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,MA,Flávio Dino,PCdoB,2019-01-01,2022-04-01,reeleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,MA,Carlos Brandão,PSB,2022-04-02,2022-12-31,vice_assumiu,2019-2022,https://www.al.ma.leg.br/noticias2/43213
+estadual,MA,Carlos Brandão,PSB,2023-01-01,,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,MG,Antonio Anastasia,PSDB,2011-01-01,2014-04-03,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,MG,Alberto Pinto Coelho,PP,2014-04-04,2014-12-31,vice_assumiu,2011-2014,https://www.mg.gov.br/governador/alberto-pinto-coelho
+estadual,MG,Fernando Pimentel,PT,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,MG,Romeu Zema,NOVO,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,MG,Romeu Zema,NOVO,2023-01-01,2026-03-21,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,MG,Mateus Simões,PSD,2026-03-22,,vice_assumiu,2023-2026,https://www.agenciaminas.mg.gov.br/multimidia/galeria/mateus-simoes-e-empossado-governador-com-o-objetivo-de-acelerar-o-desenvolvimento-de-minas-gerais-4587
+estadual,MS,André Puccinelli,PMDB,2011-01-01,2014-12-31,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,MS,Reinaldo Azambuja,PSDB,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,MS,Reinaldo Azambuja,PSDB,2019-01-01,2022-12-31,reeleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,MS,Eduardo Riedel,PSDB,2023-01-01,,eleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,MT,Silval Barbosa,PMDB,2011-01-01,2014-12-31,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,MT,Pedro Taques,PDT,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,MT,Mauro Mendes,DEM,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,MT,Mauro Mendes,UNIÃO,2023-01-01,2026-03-30,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,MT,Otaviano Pivetta,REPUBLICANOS,2026-03-31,,vice_assumiu,2023-2026,https://www.al.mt.gov.br/midia/texto/almt-da-posse-a-otaviano-pivetta-como-governador-apos-renuncia-de-mauro-mendes/visualizar
+estadual,PA,Simão Jatene,PSDB,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,PA,Simão Jatene,PSDB,2015-01-01,2018-12-31,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,PA,Helder Barbalho,MDB,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,PA,Helder Barbalho,MDB,2023-01-01,2026-04-01,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,PA,Hana Ghassan,MDB,2026-04-02,,vice_assumiu,2023-2026,https://www.alepa.pa.gov.br/Comunicacao/Noticia/11627/mensagem-de-renuncia-de-helder-e-entregue-ao-legislativo-e-marca-transicao-no-governo-do-para
+estadual,PB,Ricardo Coutinho,PSB,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,PB,Ricardo Coutinho,PSB,2015-01-01,2018-12-31,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,PB,João Azevêdo,PSB,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,PB,João Azevêdo,PSB,2023-01-01,2026-04-01,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,PB,Lucas Ribeiro,PP,2026-04-02,,vice_assumiu,2023-2026,https://auniao.pb.gov.br/noticias/caderno_politicas/lucas-ribeiro-assume-governo-da-pb
+estadual,PE,Eduardo Campos,PSB,2011-01-01,2014-04-03,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,PE,João Lyra Neto,PSB,2014-04-04,2014-12-31,vice_assumiu,2011-2014,https://www.alepe.pe.gov.br/2014/04/04/alepe-empossa-joao-lyra-neto-como-governador-de-pernambuco/
+estadual,PE,Paulo Câmara,PSB,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,PE,Paulo Câmara,PSB,2019-01-01,2022-12-31,reeleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,PE,Raquel Lyra,PSDB,2023-01-01,,eleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,PI,Wilson Martins,PSB,2011-01-01,2014-04-03,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,PI,Zé Filho,PMDB,2014-04-04,2014-12-31,vice_assumiu,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,PI,Wellington Dias,PT,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,PI,Wellington Dias,PT,2019-01-01,2022-03-30,reeleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,PI,Regina Sousa,PT,2022-03-31,2022-12-31,vice_assumiu,2019-2022,https://www.al.pi.leg.br/comunicacao/noticias/assembleia-legislativa-da-posse-a-regina-sousa-como-governadora-do-piaui
+estadual,PI,Rafael Fonteles,PT,2023-01-01,,eleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,PR,Beto Richa,PSDB,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,PR,Beto Richa,PSDB,2015-01-01,2018-04-05,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,PR,Cida Borghetti,PP,2018-04-06,2018-12-31,vice_assumiu,2015-2018,https://www.assembleia.pr.leg.br/comunicacao/noticias/cida-borghetti-presta-compromisso-na-alep-e-toma-posse-no-cargo-de-governadora-na-sexta-feira-6
+estadual,PR,Ratinho Junior,PSD,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,PR,Ratinho Junior,PSD,2023-01-01,,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,RJ,Sérgio Cabral,PMDB,2011-01-01,2014-04-03,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,RJ,Luiz Fernando Pezão,PMDB,2014-04-04,2014-12-31,vice_assumiu,2011-2014,https://agenciabrasil.ebc.com.br/politica/noticia/2014-04/pezao-toma-posse-como-governador-do-rio-de-janeiro
+estadual,RJ,Luiz Fernando Pezão,PMDB,2015-01-01,2016-03-27,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,RJ,Francisco Dornelles,PP,2016-03-28,2016-10-31,interino,2015-2018,https://agenciabrasil.ebc.com.br/politica/noticia/2016-10/afastado-ha-sete-meses-pezao-retorna-ao-governo-do-rio-amanha
+estadual,RJ,Luiz Fernando Pezão,PMDB,2016-11-01,2017-07-15,reeleito,2015-2018,https://agenciabrasil.ebc.com.br/politica/noticia/2016-10/afastado-ha-sete-meses-pezao-retorna-ao-governo-do-rio-amanha
+estadual,RJ,Francisco Dornelles,PP,2017-07-16,2017-07-23,interino,2015-2018,https://agenciabrasil.ebc.com.br/politica/noticia/2017-07/pezao-ficara-afastado-do-governo-do-rio-por-uma-semana
+estadual,RJ,Luiz Fernando Pezão,PMDB,2017-07-24,2018-11-28,reeleito,2015-2018,https://agenciabrasil.ebc.com.br/politica/noticia/2017-07/pezao-ficara-afastado-do-governo-do-rio-por-uma-semana
+estadual,RJ,Francisco Dornelles,PP,2018-11-29,2018-12-31,interino,2015-2018,https://agenciabrasil.ebc.com.br/politica/noticia/2018-11/vice-de-pezao-que-esta-preso-dornelles-assume-governo-do-rio
+estadual,RJ,Wilson Witzel,PSC,2019-01-01,2020-08-27,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,RJ,Cláudio Castro,PSC,2020-08-28,2021-04-30,interino,2019-2022,https://agenciabrasil.ebc.com.br/politica/noticia/2020-08/vice-governador-claudio-castro-assume-governo-do-rio-de-janeiro
+estadual,RJ,Cláudio Castro,PSC,2021-05-01,2022-12-31,vice_assumiu,2019-2022,https://agenciabrasil.ebc.com.br/politica/noticia/2021-05/claudio-castro-toma-posse-como-governador-efetivo-do-rio
+estadual,RJ,Cláudio Castro,PL,2023-01-01,2026-03-22,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,RJ,Ricardo Couto,sem partido,2026-03-23,,interino,2023-2026,https://noticias.stf.jus.br/postsnoticias/stf-decide-que-presidente-do-tj-deve-ser-mantido-como-governador-do-rio-de-janeiro/
+estadual,RN,Rosalba Ciarlini,DEM,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,RN,Robinson Faria,PSD,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,RN,Fátima Bezerra,PT,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,RN,Fátima Bezerra,PT,2023-01-01,,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,RO,Confúcio Moura,PMDB,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,RO,Confúcio Moura,PMDB,2015-01-01,2018-04-05,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,RO,Daniel Pereira,PSB,2018-04-06,2018-12-31,vice_assumiu,2015-2018,https://rondonia.ro.gov.br/daniel-pereira-assume-governo-de-rondonia-e-garante-que-dara-continuidade-as-acoes-estrategicas/
+estadual,RO,Marcos Rocha,PSL,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,RO,Marcos Rocha,UNIÃO,2023-01-01,,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,RR,José de Anchieta Júnior,PSDB,2011-01-01,2014-04-03,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,RR,Chico Rodrigues,PSB,2014-04-04,2014-12-31,vice_assumiu,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,RR,Suely Campos,PP,2015-01-01,2018-12-09,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,RR,Antonio Denarium,PSL,2018-12-10,2018-12-31,interventor,2015-2018,https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/D9602.htm
+estadual,RR,Antonio Denarium,PSL,2019-01-01,2022-12-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,RR,Antonio Denarium,PP,2023-01-01,2026-03-26,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,RR,Edilson Damião,UNIÃO,2026-03-27,2026-04-29,vice_assumiu,2023-2026,https://al.rr.leg.br/2026/03/27/transicao-no-executivo-alerr-oficializa-posse-de-edilson-damiao-no-governo-de-roraima-apos-renuncia-de-denarium/
+estadual,RR,Soldado Sampaio,REPUBLICANOS,2026-04-30,,interino,2023-2026,https://diarios.al.rr.leg.br/wp-content/uploads/2026/05/DIARIO-ALE-RR-ED.-4645-12.05.2026.pdf
+estadual,RS,Tarso Genro,PT,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,RS,José Ivo Sartori,PMDB,2015-01-01,2018-12-31,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,RS,Eduardo Leite,PSDB,2019-01-01,2022-03-30,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,RS,Ranolfo Vieira Júnior,PSDB,2022-03-31,2022-12-31,vice_assumiu,2019-2022,https://agenciabrasil.ebc.com.br/politica/noticia/2022-03/governador-do-rs-oficializa-renuncia
+estadual,RS,Eduardo Leite,PSDB,2023-01-01,,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,SC,Raimundo Colombo,DEM,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,SC,Raimundo Colombo,PSD,2015-01-01,2018-02-15,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,SC,Eduardo Pinho Moreira,MDB,2018-02-16,2018-04-05,interino,2015-2018,https://portal.doe.sea.sc.gov.br/repositorio/2018/20180216/Jornal/1837.pdf
+estadual,SC,Eduardo Pinho Moreira,MDB,2018-04-06,2018-12-31,vice_assumiu,2015-2018,https://www.alesc.sc.gov.br/diarios/pdf/7266dia.pdf
+estadual,SC,Carlos Moisés,PSL,2019-01-01,2020-10-26,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,SC,Daniela Reinehr,sem partido,2020-10-27,2020-11-26,interino,2019-2022,https://memoriapolitica.alesc.sc.gov.br/biografia/1386-Daniela_Reinehr
+estadual,SC,Carlos Moisés,PSL,2020-11-27,2021-03-29,eleito,2019-2022,https://memoriapolitica.alesc.sc.gov.br/biografia/1308-Carlos_Moises
+estadual,SC,Daniela Reinehr,sem partido,2021-03-30,2021-05-06,interino,2019-2022,https://agenciabrasil.ebc.com.br/politica/noticia/2021-03/daniela-reinehr-assume-o-governo-de-santa-catarina
+estadual,SC,Carlos Moisés,PSL,2021-05-07,2022-12-31,eleito,2019-2022,https://agenciaal.alesc.sc.gov.br/index.php/noticia_single/moises-e-inocentado-no-caso-dos-respiradores-e-retornara-ao-comando-do-esta
+estadual,SC,Jorginho Mello,PL,2023-01-01,,eleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,SE,Marcelo Déda,PT,2011-01-01,2013-05-26,reeleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,SE,Jackson Barreto,PMDB,2013-05-27,2013-12-01,interino,2011-2014,https://www.se.gov.br/noticias/governo/jackson-barreto-uma-historia-de-luta-e-trabalho-ao-lado-do-povo
+estadual,SE,Jackson Barreto,PMDB,2013-12-02,2014-12-31,vice_assumiu,2011-2014,https://www12.senado.leg.br/noticias/materias/2013/12/02/senadores-lamentam-morte-de-marcelo-deda
+estadual,SE,Jackson Barreto,PMDB,2015-01-01,2018-04-05,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,SE,Belivaldo Chagas,PSD,2018-04-06,2018-12-31,vice_assumiu,2015-2018,https://iose.se.gov.br/expresidentes
+estadual,SE,Belivaldo Chagas,PSD,2019-01-01,2022-12-31,reeleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,SE,Fábio Mitidieri,PSD,2023-01-01,,eleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,SP,Geraldo Alckmin,PSDB,2011-01-01,2014-12-31,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,SP,Geraldo Alckmin,PSDB,2015-01-01,2018-04-05,reeleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,SP,Márcio França,PSB,2018-04-06,2018-12-31,vice_assumiu,2015-2018,https://www.bibliotecajuridica.sp.gov.br/alesp-empossa-marcio-franca-como-governador-do-estado-de-sao-paulo/
+estadual,SP,João Doria,PSDB,2019-01-01,2022-03-31,eleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,SP,Rodrigo Garcia,PSDB,2022-04-01,2022-12-31,vice_assumiu,2019-2022,https://www.al.sp.gov.br/noticia/?id=436383
+estadual,SP,Tarcísio de Freitas,REPUBLICANOS,2023-01-01,,eleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,TO,Siqueira Campos,PSDB,2011-01-01,2014-04-03,eleito,2011-2014,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip
+estadual,TO,Sandoval Cardoso,SD,2014-04-04,2014-05-03,interino,2011-2014,https://doe.to.gov.br/diario/2508/download
+estadual,TO,Sandoval Cardoso,SD,2014-05-04,2014-12-31,eleito_indireto,2011-2014,https://www.al.to.leg.br/galeria/ajax/5712/posse-de-sandoval-em-04-05-2014
+estadual,TO,Marcelo Miranda,PMDB,2015-01-01,2018-03-26,eleito,2015-2018,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2014.zip
+estadual,TO,Mauro Carlesse,PHS,2018-03-27,2018-04-06,interino,2015-2018,https://doe.to.gov.br/diario/3544/download
+estadual,TO,Marcelo Miranda,PMDB,2018-04-07,2018-04-18,eleito,2015-2018,https://doe.to.gov.br/diario/3552/download
+estadual,TO,Mauro Carlesse,PHS,2018-04-19,2018-07-08,interino,2015-2018,https://doe.to.gov.br/diario/3562/download
+estadual,TO,Mauro Carlesse,PHS,2018-07-09,2018-12-31,eleito,2015-2018,https://www.tre-to.jus.br/comunicacao/noticias/2018/Julho/tre-to-diploma-mauro-carlesse-e-wanderley-barbosa-para-o-mandato-tampao-ate-31-de-dezembro
+estadual,TO,Mauro Carlesse,PHS,2019-01-01,2021-10-19,reeleito,2019-2022,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip
+estadual,TO,Wanderlei Barbosa,sem partido,2021-10-20,2022-03-10,interino,2019-2022,https://agenciabrasil.ebc.com.br/radioagencia-nacional/politica/audio/2021-10/stj-determina-afastamento-de-governador-do-tocantins-por-seis-meses
+estadual,TO,Wanderlei Barbosa,sem partido,2022-03-11,2022-12-31,vice_assumiu,2019-2022,https://agenciabrasil.ebc.com.br/politica/noticia/2022-03/mauro-carlesse-renuncia-ao-cargo-de-governador-do-tocantins
+estadual,TO,Wanderlei Barbosa,REPUBLICANOS,2023-01-01,2025-09-02,reeleito,2023-2026,https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip
+estadual,TO,Laurez Moreira,PSD,2025-09-03,2025-12-04,interino,2023-2026,https://agenciabrasil.ebc.com.br/geral/noticia/2025-09/alvo-de-investigacao-governador-do-tocantins-e-afastado-do-cargo
+estadual,TO,Wanderlei Barbosa,REPUBLICANOS,2025-12-05,,reeleito,2023-2026,https://agenciabrasil.ebc.com.br/justica/noticia/2025-12/nunes-marques-derruba-decisao-que-afastou-governador-do-tocantins
