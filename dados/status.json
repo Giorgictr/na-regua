@@ -1,73 +1,75 @@
 {
  "ambiente": {
-  "em": "2026-10-07T15:21:21+00:00",
-  "linhas": 714,
+  "em": "2026-11-11T02:23:33+00:00",
+  "linhas": 738,
   "ok": true
  },
  "bcb": {
-  "em": "2026-10-07T15:22:18+00:00",
-  "linhas": 4211,
+  "em": "2026-11-11T02:24:43+00:00",
+  "linhas": 4236,
   "ok": true
  },
  "caged": {
-  "em": "2026-10-07T15:23:35+00:00",
-  "linhas": 2240,
+  "em": "2026-11-11T02:25:14+00:00",
+  "linhas": 2268,
   "ok": true
  },
  "comex": {
-  "em": "2026-10-07T15:30:02+00:00",
+  "em": "2026-11-11T02:28:31+00:00",
   "linhas": 1176,
   "ok": true
  },
  "cultura": {
-  "em": "2026-10-07T15:33:47+00:00",
+  "em": "2026-11-11T02:28:57+00:00",
   "linhas": 364,
   "ok": true
  },
  "datasus": {
-  "em": "2026-10-07T15:34:21+00:00",
-  "erro": "coleta interrompida (tempo esgotado ou erro fatal)",
+  "em": "2026-11-11T02:29:25+00:00",
+  "erro": "RuntimeError: datasus: falhou https://tabnet.datasus.gov.br/cgi/deftohtm.exe?ibge/cnv/projpop2024uf.def: <urlopen error [Errno 110] Connection timed out>",
   "ok": false,
   "ultima_ok": "2026-10-07T12:07:33+00:00"
  },
  "educacao": {
-  "em": "2026-10-07T16:14:21+00:00",
-  "linhas": 1092,
-  "ok": true
+  "em": "2026-11-11T02:44:33+00:00",
+  "erro": "RuntimeError: educacao: falhou https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/taxas_rendimento/tx_rendimento_brasil_regioes_UFs_2012.zip: <urlopen error [Errno 110] Connection timed out>",
+  "ok": false,
+  "ultima_ok": "2026-10-07T16:14:21+00:00"
  },
  "ibge": {
-  "em": "2026-10-07T16:15:31+00:00",
+  "em": "2026-11-11T02:54:23+00:00",
   "linhas": 10444,
   "ok": true
  },
  "ibge_extra": {
-  "em": "2026-10-07T16:15:47+00:00",
+  "em": "2026-11-11T02:54:37+00:00",
   "linhas": 3516,
   "ok": true
  },
  "inep": {
-  "em": "2026-10-07T16:18:19+00:00",
-  "linhas": 583,
-  "ok": true
+  "em": "2026-11-11T02:59:38+00:00",
+  "erro": "RuntimeError: nenhuma edição do IDEB encontrada: inep: falhou https://download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_2023.zip: <urlopen error [Errno 110] Connection timed out>",
+  "ok": false,
+  "ultima_ok": "2026-10-07T16:18:19+00:00"
  },
  "mds": {
-  "em": "2026-10-07T16:18:37+00:00",
-  "linhas": 14616,
-  "ok": true
+  "em": "2026-11-11T03:16:25+00:00",
+  "erro": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+  "ok": false,
+  "ultima_ok": "2026-10-07T16:18:37+00:00"
  },
  "saude": {
-  "em": "2026-10-07T16:18:51+00:00",
-  "erro": "coleta interrompida (tempo esgotado ou erro fatal)",
-  "ok": false,
-  "ultima_ok": "2026-10-07T12:07:33+00:00"
+  "em": "2026-11-11T03:16:31+00:00",
+  "linhas": 1176,
+  "ok": true
  },
  "seguranca": {
-  "em": "2026-10-07T16:58:51+00:00",
+  "em": "2026-11-11T03:54:56+00:00",
   "linhas": 1728,
   "ok": true
  },
  "siconfi": {
-  "em": "2026-10-07T17:20:40+00:00",
+  "em": "2026-11-11T04:09:21+00:00",
   "linhas": 6027,
   "ok": true
  }
