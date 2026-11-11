@@ -251,7 +251,7 @@ def _anual(agg: dict) -> dict:
 def _populacao(sexo: str | None) -> tuple[dict, str, str]:
     """TabNet (POST, latin-1): {(uf|'BR', ano): pessoas}. sexo=None (todos) ou '2' (mulheres)."""
     link = f"{CGI}/deftohtm.exe?{DEF_POP}"
-    form, _ = baixar(FONTE, link, ext="html")
+    form, _ = baixar(FONTE, link, ext="html", reaproveitar=True)
     form = form.decode("latin-1")
     arquivos = sorted(set(re.findall(r'VALUE="(projuf\d\d\.dbf)"', form)))
     pares = [("Linha", "Unidade_da_Federação"), ("Coluna", "Ano"),
@@ -264,7 +264,7 @@ def _populacao(sexo: str | None) -> tuple[dict, str, str]:
     corpo = "&".join(quote_plus(k, encoding="latin-1") + "=" + quote_plus(v, encoding="latin-1")
                      for k, v in pares).encode("ascii")
     url = f"{CGI}/tabcgi.exe?{DEF_POP}"
-    bruto, sha = baixar(FONTE, url, dados=corpo, ext="html")
+    bruto, sha = baixar(FONTE, url, dados=corpo, ext="html", reaproveitar=True)
     pre = re.search(r"<PRE>(.*?)</PRE>", bruto.decode("latin-1"), re.S | re.I)
     if not pre:
         raise RuntimeError(f"{FONTE}: TabNet de população sem tabela")

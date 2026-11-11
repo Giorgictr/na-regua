@@ -51,7 +51,7 @@ def _baixar_fluxo(fluxo: str, ate: int) -> tuple[dict, str, str]:
     }).encode()
     url = API
     corpo, sha = baixar("comex", url, dados=corpo_post,
-                        cabecalhos={"Content-Type": "application/json"})
+                        cabecalhos={"Content-Type": "application/json"}, tentativas=7)
     valores: dict[tuple[str, str], float] = {}
     for r in json.loads(corpo)["data"]["list"]:
         ano, fob = r["year"], float(r["metricFOB"])

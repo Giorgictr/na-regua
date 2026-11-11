@@ -44,7 +44,7 @@ GZIP_A_PARTIR = 256 * 1024  # brutos maiores que isso são guardados comprimidos
 
 def baixar(fonte: str, url: str, *, dados: bytes | None = None, ext: str = "json",
            tentativas: int = 4, cabecalhos: dict | None = None,
-           normalizar=None) -> tuple[bytes, str]:
+           normalizar=None, reaproveitar: bool = False) -> tuple[bytes, str]:
     """Baixa `url` (POST se `dados`), guarda o bruto e registra a procedência.
 
     Devolve (conteúdo, sha256) — o hash vai junto de cada número extraído.
@@ -52,7 +52,11 @@ def baixar(fonte: str, url: str, *, dados: bytes | None = None, ext: str = "json
     `normalizar(bytes) -> bytes`, quando dado, é aplicado ANTES do hash: serve para fontes
     que devolvem o mesmo conteúdo em ordem diferente a cada chamada (ex.: IPEADATA). O
     arquivo guardado é o normalizado, e o coletor documenta o que a normalização faz.
-    Arquivos grandes vão como <sha256>.<ext>.gz; o hash é sempre do conteúdo descomprimido."""
+    Arquivos grandes vão como <sha256>.<ext>.gz; o hash é sempre do conteúdo descomprimido.
+
+    `reaproveitar=True` (só para dados de referência que mudam raramente, como a projeção de
+    população): se a fonte não responder, usa o último arquivo já baixado com a mesma url e o
+    mesmo corpo de POST, e registra isso em proveniencia.csv como "reaproveitado"."""
     erro = None
     for i in range(tentativas):
         try:
@@ -66,7 +70,14 @@ def baixar(fonte: str, url: str, *, dados: bytes | None = None, ext: str = "json
             # 429 = "muitos pedidos": a fonte pede calma, espera bem mais
             time.sleep((30 if getattr(e, "code", None) == 429 else 5) * (i + 1))
     else:
-        raise RuntimeError(f"{fonte}: falhou {url}: {erro}")
+        antigo = _ultimo_bruto(url, dados) if reaproveitar else None
+        if antigo is None:
+            raise RuntimeError(f"{fonte}: falhou {url}: {erro}")
+        corpo, sha = antigo
+        _registrar([dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), fonte, url,
+                    "sim" if dados else "", sha, len(corpo), "reaproveitado (fonte sem resposta)",
+                    hashlib.sha256(dados).hexdigest() if dados else ""])
+        return corpo, sha
 
     if normalizar:
         corpo = normalizar(corpo)
@@ -94,6 +105,28 @@ def baixar(fonte: str, url: str, *, dados: bytes | None = None, ext: str = "json
     _registrar([dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), fonte, url,
                 "sim" if dados else "", sha, len(corpo), "sim" if novo else "não", sha_post])
     return corpo, sha
+
+
+def _ultimo_bruto(url: str, dados: bytes | None):
+    """Último arquivo bruto guardado para esta consulta (mesma url e mesmo corpo), ou None."""
+    if not PROVENIENCIA.exists():
+        return None
+    alvo_post = hashlib.sha256(dados).hexdigest() if dados else ""
+    achado = None
+    with PROVENIENCIA.open(encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            if r.get("url") == url and (r.get("post_sha256") or "") == alvo_post and r.get("sha256"):
+                achado = r["sha256"]
+    if not achado:
+        return None
+    for arq in BRUTOS.glob(f"*/{achado}.*"):
+        if arq.name.endswith(".post") or ".post." in arq.name:
+            continue
+        corpo = arq.read_bytes()
+        if arq.suffix == ".gz":
+            corpo = gzip.decompress(corpo)
+        return corpo, achado
+    return None
 
 
 CABECALHO_PROV = ["baixado_em", "fonte", "url", "post", "sha256", "bytes", "conteudo_novo",

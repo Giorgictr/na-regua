@@ -250,7 +250,7 @@ def _populacao() -> tuple[dict, str, str]:
     """Projeção da População IBGE rev. 2024, 2012 até o último ano encerrado, pedida ao
     TabNet por POST com o mesmo corpo do formulário. Devolve ({(uf, 'ano'): hab}, sha, url)."""
     link = f"{TABNET}/deftohtm.exe?{DEF_POP}"
-    form, _ = baixar("ibge", link, ext="html")
+    form, _ = baixar("ibge", link, ext="html", reaproveitar=True)
     form = form.decode("latin-1")
     disponiveis = set(re.findall(r'VALUE="(projuf\d\d\.dbf)"', form))
     arquivos = [a for a in (f"projuf{a % 100:02d}.dbf" for a in range(2012, dt.date.today().year))
@@ -261,7 +261,7 @@ def _populacao() -> tuple[dict, str, str]:
     pares += [(s, "TODAS_AS_CATEGORIAS__") for s in re.findall(r'NAME="(S[^"]+)"', form)]
     pares += [("formato", "prn"), ("mostre", "Mostra")]
     url = f"{TABNET}/tabcgi.exe?{DEF_POP}"
-    bruto, sha = baixar("ibge", url, dados=_corpo(pares), ext="html")
+    bruto, sha = baixar("ibge", url, dados=_corpo(pares), ext="html", reaproveitar=True)
     pagina = bruto.decode("latin-1")
     pre = re.search(r"<PRE>(.*?)</PRE>", pagina, re.S | re.I)
     if not pre:
